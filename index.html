@@ -45,8 +45,20 @@ right: 0px;
     .custom-image {
         width: 50px;
         height: auto;
+       transition: transform 0.2s;
     }
     
+    
+      .custom-image-widget:hover .custom-image {
+        transform: scale(1.05); /* Slight zoom effect */
+    }  
+ 
+ 
+     .custom-image-widget:hover .tooltip {
+        visibility: visible;
+        opacity: 1;
+    }
+ 
     
     
     
@@ -81,11 +93,17 @@ right: 0px;
 <body class="min-h-screen bg-gray-50">
     
     
-        <div class="custom-image-widget">
+       
+ <div class="custom-image-widget" style="position: relative; display: inline-block;"> <!-- ADD THESE STYLES -->
     <a href="https://elnegocio-digital.translate.goog/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp">
-        <img class="custom-image" src="https://bucket.mlcdn.com/a/3336/3336910/images/547603d0901c95185f142e0805fb2bdfa9e7e74a.png" alt="English Translation">
+        <img class="custom-image" 
+             src="https://bucket.mlcdn.com/a/3336/3336910/images/2a80b4b95b286e4b7ad474d57c02f3e5ce1fa616.png" 
+             alt="Spanish Translation"
+             style="display: block;"> <!-- Ensure image is block-level -->
     </a>
+
 </div>
+
     
     
     
