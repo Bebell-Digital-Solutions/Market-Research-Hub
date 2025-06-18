@@ -1,20 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- Replace your existing <head> section with this: -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-commerce Research Hub - Complete Guide to Market Success</title>
     
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Caveat:wght@500&display=swap" rel="stylesheet">
+    
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Add this with your other scripts -->
     <script src="https://unpkg.com/lucide@latest"></script>
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
-
-    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
     
     <script>
@@ -26,45 +25,44 @@
                             600: '#DF1783',
                             700: '#C1146E'
                         }
-                    }
-                }
-            }
-        }
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                        caveat: ['Caveat', 'cursive'],
+                    },
+                },
+            },
+        };
     </script>
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <style>
-    
-    .custom-image-widget {
-  position: fixed !important;
-  top: 50px !important;  /* Verify this value isn't too large */
-  margin: 0 !important;
-  padding: 0 !important;
-right: 0px;
-        z-index: 999;
-}
-  
-    .custom-image {
-        width: 70px;
-        height: auto;
-       transition: transform 0.2s;
-    }
-    
-    
-      .custom-image-widget:hover .custom-image {
-        transform: scale(1.05); /* Slight zoom effect */
-    }  
- 
- 
-     .custom-image-widget:hover .tooltip {
-        visibility: visible;
-        opacity: 1;
-    }
- 
-    
-    
+        .custom-image-widget {
+            position: fixed !important;
+            top: 50px !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            right: 0px;
+            z-index: 999;
+        }
+        
+        .custom-image {
+            width: 70px;
+            height: auto;
+            transition: transform 0.2s;
+        }
+        
+        .custom-image-widget:hover .custom-image {
+            transform: scale(1.05);
+        }
+        
+        .custom-image-widget:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+        
         .accordion-content {
             max-height: 0;
             overflow: hidden;
@@ -84,12 +82,51 @@ right: 0px;
         .progress-bar {
             transition: width 0.5s ease-in-out;
         }
-    </style>
-    
-    
+        
+        
+        
+        
+/* Adjust the timeline marker positioning */
+.timeline-marker {
+    position: absolute;
+    left: 2px;
+    top: 1.5rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 9999px;
+    background: #DF1783;
+    border: 4px solid #f8fafc;
+    box-sizing: content-box;
+    transform: translateX(-50%);
+}
 
-    
-    
+@media (min-width: 640px) {
+    .timeline-marker {
+        left: 6.5rem;
+    }
+}
+
+/* Adjust the timeline line */
+.timeline-item:before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    height: 100%;
+    width: 1px;
+    background: #e2e8f0;
+    transform: translateX(-50%);
+}
+
+@media (min-width: 640px) {
+    .timeline-item:before {
+        left: 6.5rem;
+    }
+}
+
+
+
+    </style>
 </head>
 <body class="min-h-screen bg-gray-50">
     
@@ -311,6 +348,13 @@ right: 0px;
                         </div>
                     </div>
 
+
+
+
+
+
+
+
                     <!-- Quick Stats -->
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
                        
@@ -354,10 +398,13 @@ right: 0px;
                             <p class="text-gray-600 text-sm">Success Rate</p>
                         </div>
                     </div>
+                    
+                    
+                    
 
                     <!-- Research Process -->
                     <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-12">
-                        <h2 class="text-2xl font-bold text-gray-900 mb-6">🎯 Your Research Process</h2>
+                           <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">🎯 Your Research Process</h2>
                         <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
                             <div class="text-center" onclick="showSection('market-investigation')">
                                 <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4 cursor-pointer hover:bg-pink-200 transition-colors">
@@ -397,6 +444,153 @@ right: 0px;
                         </div>
                     </div>
                 </div>
+                
+                
+                
+                
+    <!-- "Market Research Timeline" section -->
+<div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 mb-12">
+
+
+    <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">⏳ Market Research Timeline</h2>
+    
+    <div class="flex justify-center">
+        <div class="w-full max-w-2xl"> <!-- This constrains and centers the timeline content -->
+           
+                
+                <!-- Timeline items -->
+                <div class="space-y-8">
+                
+
+                <!-- Phase 1 -->
+                <div class="relative pl-8 sm:pl-32 py-6 group timeline-item">
+                    <div class="font-caveat font-medium text-2xl text-pink-600 mb-1 sm:mb-0">Phase 1</div>
+                    <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
+                        <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-pink-600 bg-pink-100 rounded-full">Week 1-2</time>
+                        <div class="text-xl font-bold text-slate-900">Market Investigation</div>
+                        <div class="timeline-marker"></div>
+                    </div>
+                    <div class="text-slate-600">
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Define your target market and customer personas</li>
+                            <li>Analyze market size and growth potential</li>
+                            <li>Identify key market trends and dynamics</li>
+                            <li>Conduct SWOT analysis of the market</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Phase 2 -->
+                <div class="relative pl-8 sm:pl-32 py-6 group timeline-item">
+                    <div class="font-caveat font-medium text-2xl text-pink-600 mb-1 sm:mb-0">Phase 2</div>
+                    <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
+                        <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-pink-600 bg-pink-100 rounded-full">Week 3-4</time>
+                        <div class="text-xl font-bold text-slate-900">Trend & Niche Identification</div>
+                        <div class="timeline-marker"></div>
+                    </div>
+                    <div class="text-slate-600">
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Identify emerging trends in your industry</li>
+                            <li>Discover profitable niche opportunities</li>
+                            <li>Analyze search trends and social media buzz</li>
+                            <li>Validate demand through keyword research</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Phase 3 -->
+                <div class="relative pl-8 sm:pl-32 py-6 group timeline-item">
+                    <div class="font-caveat font-medium text-2xl text-pink-600 mb-1 sm:mb-0">Phase 3</div>
+                    <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
+                        <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-pink-600 bg-pink-100 rounded-full">Week 5-6</time>
+                        <div class="text-xl font-bold text-slate-900">Competitive Analysis</div>
+                        <div class="timeline-marker"></div>
+                    </div>
+                    <div class="text-slate-600">
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Identify direct and indirect competitors</li>
+                            <li>Analyze competitor strengths and weaknesses</li>
+                            <li>Map competitor pricing and positioning</li>
+                            <li>Identify gaps in the competitive landscape</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Phase 4 -->
+                <div class="relative pl-8 sm:pl-32 py-6 group timeline-item">
+                    <div class="font-caveat font-medium text-2xl text-pink-600 mb-1 sm:mb-0">Phase 4</div>
+                    <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
+                        <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-pink-600 bg-pink-100 rounded-full">Week 7</time>
+                        <div class="text-xl font-bold text-slate-900">Product Validation</div>
+                        <div class="timeline-marker"></div>
+                    </div>
+                    <div class="text-slate-600">
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Validate product-market fit</li>
+                            <li>Test pricing strategies</li>
+                            <li>Gather early customer feedback</li>
+                            <li>Conduct pre-launch surveys</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Phase 5 -->
+                <div class="relative pl-8 sm:pl-32 py-6 group timeline-item">
+                    <div class="font-caveat font-medium text-2xl text-pink-600 mb-1 sm:mb-0">Phase 5</div>
+                    <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
+                        <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-pink-600 bg-pink-100 rounded-full">Week 8</time>
+                        <div class="text-xl font-bold text-slate-900">Advanced Analysis & Strategy</div>
+                        <div class="timeline-marker"></div>
+                    </div>
+                    <div class="text-slate-600">
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Compile research findings into actionable insights</li>
+                            <li>Develop go-to-market strategy</li>
+                            <li>Create marketing and positioning recommendations</li>
+                            <li>Finalize research documentation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+        
+    <div class="mt-12"> <!-- Spacing above the banner -->
+  <img 
+    src="https://bucket.mlcdn.com/a/3336/3336910/images/0953b807d6a746d122e2ee8054b51fdc0a0aef14.png" 
+    alt="Market Research Banner"
+    class="w-full h-auto object-cover rounded-lg"
+    loading="lazy"
+  >
+</div>
+    
+  
+        
+    <!-- Add this after your timeline section, before the footer -->
+<div class="mt-16 bg-gradient-to-r from-pink-600 to-purple-600 py-12 px-4 sm:px-6 lg:px-8 rounded-lg shadow-lg">
+  <div class="max-w-5xl mx-auto text-center">
+    <blockquote class="text-white">
+      <p class="text-xl sm:text-2xl font-medium italic leading-relaxed">
+        "The secret of success in business is preparation, research, and hard work. 
+        <span class="block mt-4 font-bold text-white/90">Good fortune is what happens when opportunity meets preparation.</span>
+      </p>
+      <footer class="mt-6 text-white/80">
+        <cite class="font-semibold not-italic">— Zig Ziglar</cite>
+      </footer>
+    </blockquote>
+  </div>
+</div>   
+  
+  
+  
+  
+</div> 
+                
+
+                
+           
            
            
   <div>
