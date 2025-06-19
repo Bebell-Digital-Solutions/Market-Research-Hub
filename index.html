@@ -3,6 +3,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-commerce Research Hub - Complete Guide to Market Success</title>
+
+
+
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +18,8 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
+    
+    
     
     <script>
         tailwind.config = {
@@ -34,11 +39,23 @@
             },
         };
     </script>
+
+    
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <style>
+    /* Base Styles */
+        :root {
+            --primary: #3a86ff;
+            --primary-dark: #2667cc;
+            --secondary: #8338ec;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+        }
+        
+
         .custom-image-widget {
             position: fixed !important;
             top: 50px !important;
@@ -123,6 +140,15 @@
         left: 6.5rem;
     }
 }
+
+
+                #back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: none;
+            cursor: pointer;
+        }
 
 
 
@@ -897,7 +923,11 @@
         </div>
     </div>
     
-    
+        <!-- Widget Volver arriba -->
+<div id="back-to-top" onclick="scrollToTop()">
+    <img src="https://bucket.mlcdn.com/a/3336/3336910/images/df328842f9d0426c55f3baa7182c6c0049abd65b.png" alt="Volver arriba" style="width: 40px; height: 40px;">
+</div>
+
     
     
 
@@ -2342,10 +2372,6 @@ function triggerConfetti() {
 
 
 
-
-
-
-
         // Accordion functions
         function toggleAccordion(phaseId) {
             const content = document.getElementById(`accordion-${phaseId}`);
@@ -2448,5 +2474,29 @@ function triggerConfetti() {
         // Initialize when DOM is loaded
         document.addEventListener('DOMContentLoaded', init);
     </script>
+
+    
+<!-- Widget Volver arriba -->
+<script>
+    window.onscroll = function() {
+        scrollFunction();
+    };
+
+    function scrollFunction() {
+        var backToTopButton = document.getElementById("back-to-top");
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            backToTopButton.style.display = "block";
+        } else {
+            backToTopButton.style.display = "none";
+        }
+    }
+
+    function scrollToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+    
 </body>
 </html>
