@@ -75,12 +75,13 @@
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <style>
+       <style>
         :root {
             --primary: #3a86ff;
             --primary-dark: #2667cc;
             --secondary: #8338ec;
-            --dark: #1a1a2e; /* Will be overridden by Tailwind dark mode */
-            --light: #f8f9fa; /* Will be overridden by Tailwind dark mode */
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
         }
         
         .custom-image-widget {
@@ -132,46 +133,48 @@
         
         .timeline-marker {
             position: absolute;
-            /* left adjusted based on new padding */
             left: 0.5rem; 
             top: 1.5rem; 
             width: 0.75rem; 
             height: 0.75rem; 
             border-radius: 9999px; 
             background-color: #DF1783; 
-            border: 4px solid #f8fafc; /* Light theme: slate-50 */
+            border: 4px solid #f8fafc;
             box-sizing: content-box; 
             transform: translateX(-50%);
+            z-index: 10;
         }
         html.dark .timeline-marker {
-            border: 4px solid #1f2937; /* Dark theme: slate-800 */
+            border: 4px solid #1f2937;
+            background-color: #db2777;
         }
 
-        @media (min-width: 640px) { /* sm breakpoint */
+        @media (min-width: 640px) {
             .timeline-marker {
-                 /* Adjusted for sm:pl-8 on timeline-item. Time tag is left:0, w-20 (5rem). Marker can be to its left or overlapping. Let's place it at 1rem into the timeline-item's padding. */
                 left: 1rem;
             }
         }
 
-        .timeline-item:before {
+        .timeline-item {
+            position: relative;
+        }
+        
+        .timeline-item:not(:last-child):after {
             content: '';
             position: absolute;
-             /* left adjusted based on new padding */
-            left: 0.5rem;
             top: 0;
+            left: 0.5rem;
             height: 100%;
-            width: 1px; 
-            background-color: #e2e8f0; /* Light theme: slate-300 */
-            transform: translateX(-50%); 
+            width: 2px;
+            background-color: #e2e8f0;
+            transform: translateX(-50%);
         }
-        html.dark .timeline-item:before {
-            background-color: #374151; /* Dark theme: slate-700 */
+        html.dark .timeline-item:not(:last-child):after {
+            background-color: #374151;
         }
 
-        @media (min-width: 640px) { /* sm breakpoint */
-            .timeline-item:before {
-                /* Adjusted to match timeline-marker's new left for sm screens */
+        @media (min-width: 640px) {
+            .timeline-item:not(:last-child):after {
                 left: 1rem;
             }
         }
@@ -183,6 +186,33 @@
             display: none;
             cursor: pointer;
             z-index: 1000; 
+        }
+        
+        /* New container styling for consistent width */
+        .container-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        /* Timeline specific width constraints */
+        .timeline-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        /* Header styling */
+        .section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(to right, #db2777, #9333ea);
         }
     </style>
 <script type="importmap">
@@ -356,6 +386,8 @@
                         <p class="text-xl text-gray-600 dark:text-slate-400 max-w-3xl mx-auto mb-8">
                             Your comprehensive guide to building a sustainable online business through strategic research and analysis. From idea validation to market launch.
                         </p>
+                        
+                        
                         <div class="flex flex-col sm:flex-row gap-4 justify-center">
                             <button onclick="showSection('market-investigation')" class="bg-pink-600 hover:bg-pink-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center">
                                 🎯 Start Research Journey <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
@@ -399,9 +431,16 @@
                         </div>
                     </div>
                     
-                    <div class="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-gray-200 dark:border-slate-700 p-8 mb-12">
+                   
+                   
+                   
+                   
+                   
+                   
+                   
+                   <div class="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-gray-200 dark:border-slate-700 p-8 mb-12">
                         <h2 class="text-5xl font-bold text-gray-900 dark:text-slate-100 tracking-tight mb-7 mt-8 text-center">
-                            🎯 Your Research with <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600">Process</span>
+                            🎯 Market Research <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600">Process</span>
                         </h2>
                         <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
                             <div class="text-center" onclick="showSection('market-investigation')">
@@ -443,96 +482,118 @@
                     </div>
                 </div>
                 
-                <div class="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-gray-200 dark:border-slate-700 p-8 mb-12">
-                    <h2 class="text-5xl font-bold text-gray-900 dark:text-slate-100 tracking-tight mb-7 mt-8 text-center">
-                        ⏳ Market Research <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600">Timeline</span>
-                    </h2>
-                    <div class="w-full">
-                        <div class="w-full">
-                            <div class="space-y-8 mt-6">
-                                <div class="relative pl-6 sm:pl-8 py-6 group timeline-item">
-                                    <div class="font-caveat font-medium text-2xl text-pink-600 dark:text-pink-400 mb-1 sm:mb-0">Phase 1</div>
-                                    <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
-                                        <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-pink-600 dark:text-pink-400 bg-pink-100 dark:bg-pink-900/50 rounded-full">Week 1-2</time>
-                                        <div class="text-xl font-bold text-slate-900 dark:text-slate-100">Market Investigation</div>
-                                        <div class="timeline-marker"></div>
-                                    </div>
-                                    <div class="text-slate-600 dark:text-slate-400">
-                                        <ul class="list-disc pl-5 space-y-2">
-                                            <li>Define your target market and customer personas</li>
-                                            <li>Analyze market size and growth potential</li>
-                                            <li>Identify key market trends and dynamics</li>
-                                            <li>Conduct SWOT analysis of the market</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="relative pl-6 sm:pl-8 py-6 group timeline-item">
-                                    <div class="font-caveat font-medium text-2xl text-pink-600 dark:text-pink-400 mb-1 sm:mb-0">Phase 2</div>
-                                    <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
-                                        <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-pink-600 dark:text-pink-400 bg-pink-100 dark:bg-pink-900/50 rounded-full">Week 3-4</time>
-                                        <div class="text-xl font-bold text-slate-900 dark:text-slate-100">Trend & Niche Identification</div>
-                                        <div class="timeline-marker"></div>
-                                    </div>
-                                    <div class="text-slate-600 dark:text-slate-400">
-                                        <ul class="list-disc pl-5 space-y-2">
-                                            <li>Identify emerging trends in your industry</li>
-                                            <li>Discover profitable niche opportunities</li>
-                                            <li>Analyze search trends and social media buzz</li>
-                                            <li>Validate demand through keyword research</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="relative pl-6 sm:pl-8 py-6 group timeline-item">
-                                    <div class="font-caveat font-medium text-2xl text-pink-600 dark:text-pink-400 mb-1 sm:mb-0">Phase 3</div>
-                                    <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
-                                        <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-pink-600 dark:text-pink-400 bg-pink-100 dark:bg-pink-900/50 rounded-full">Week 5-6</time>
-                                        <div class="text-xl font-bold text-slate-900 dark:text-slate-100">Competitive Analysis</div>
-                                        <div class="timeline-marker"></div>
-                                    </div>
-                                    <div class="text-slate-600 dark:text-slate-400">
-                                        <ul class="list-disc pl-5 space-y-2">
-                                            <li>Identify direct and indirect competitors</li>
-                                            <li>Analyze competitor strengths and weaknesses</li>
-                                            <li>Map competitor pricing and positioning</li>
-                                            <li>Identify gaps in the competitive landscape</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="relative pl-6 sm:pl-8 py-6 group timeline-item">
-                                    <div class="font-caveat font-medium text-2xl text-pink-600 dark:text-pink-400 mb-1 sm:mb-0">Phase 4</div>
-                                    <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
-                                        <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-pink-600 dark:text-pink-400 bg-pink-100 dark:bg-pink-900/50 rounded-full">Week 7</time>
-                                        <div class="text-xl font-bold text-slate-900 dark:text-slate-100">Product Validation</div>
-                                        <div class="timeline-marker"></div>
-                                    </div>
-                                    <div class="text-slate-600 dark:text-slate-400">
-                                        <ul class="list-disc pl-5 space-y-2">
-                                            <li>Validate product-market fit</li>
-                                            <li>Test pricing strategies</li>
-                                            <li>Gather early customer feedback</li>
-                                            <li>Conduct pre-launch surveys</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="relative pl-6 sm:pl-8 py-6 group timeline-item">
-                                    <div class="font-caveat font-medium text-2xl text-pink-600 dark:text-pink-400 mb-1 sm:mb-0">Phase 5</div>
-                                    <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
-                                        <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-pink-600 dark:text-pink-400 bg-pink-100 dark:bg-pink-900/50 rounded-full">Week 8</time>
-                                        <div class="text-xl font-bold text-slate-900 dark:text-slate-100">Advanced Analysis & Strategy</div>
-                                        <div class="timeline-marker"></div>
-                                    </div>
-                                    <div class="text-slate-600 dark:text-slate-400">
-                                        <ul class="list-disc pl-5 space-y-2">
-                                            <li>Compile research findings into actionable insights</li>
-                                            <li>Develop go-to-market strategy</li>
-                                            <li>Create marketing and positioning recommendations</li>
-                                            <li>Finalize research documentation</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
+                
+                
+                
+                
+                
+               <!-- Fixed Timeline Section -->
+        <div class="max-w-6xl mx-auto bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 dark:border-slate-700 p-6 sm:p-8 mb-10">
+            <div class="section-header">
+                <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-slate-100 tracking-tight">
+                    ⏳ Market Research <span class="gradient-text">Timeline</span>
+                </h2>
+            </div>
+            
+            <!-- Timeline container with fixed width -->
+            <div class="timeline-container">
+                <div class="space-y-6">
+                    <!-- Timeline Item 1 -->
+                    <div class="relative pl-6 sm:pl-8 py-6 group timeline-item">
+                        <div class="font-caveat font-medium text-2xl text-pink-600 dark:text-pink-400 mb-1 sm:mb-0">Phase 1</div>
+                        <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
+                            <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-pink-600 dark:text-pink-400 bg-pink-100 dark:bg-pink-900/50 rounded-full">Week 1-2</time>
+                            <div class="text-xl font-bold text-slate-900 dark:text-slate-100">Market Investigation</div>
+                            <div class="timeline-marker"></div>
+                        </div>
+                        <div class="text-slate-600 dark:text-slate-400 mt-3">
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li>Define your target market and customer personas</li>
+                                <li>Analyze market size and growth potential</li>
+                                <li>Identify key market trends and dynamics</li>
+                                <li>Conduct SWOT analysis of the market</li>
+                            </ul>
                         </div>
                     </div>
+                    
+                    <!-- Timeline Item 2 -->
+                    <div class="relative pl-6 sm:pl-8 py-6 group timeline-item">
+                        <div class="font-caveat font-medium text-2xl text-pink-600 dark:text-pink-400 mb-1 sm:mb-0">Phase 2</div>
+                        <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
+                            <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-pink-600 dark:text-pink-400 bg-pink-100 dark:bg-pink-900/50 rounded-full">Week 3-4</time>
+                            <div class="text-xl font-bold text-slate-900 dark:text-slate-100">Trend & Niche Identification</div>
+                            <div class="timeline-marker"></div>
+                        </div>
+                        <div class="text-slate-600 dark:text-slate-400 mt-3">
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li>Identify emerging trends in your industry</li>
+                                <li>Discover profitable niche opportunities</li>
+                                <li>Analyze search trends and social media buzz</li>
+                                <li>Validate demand through keyword research</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 3 -->
+                    <div class="relative pl-6 sm:pl-8 py-6 group timeline-item">
+                        <div class="font-caveat font-medium text-2xl text-pink-600 dark:text-pink-400 mb-1 sm:mb-0">Phase 3</div>
+                        <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
+                            <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-pink-600 dark:text-pink-400 bg-pink-100 dark:bg-pink-900/50 rounded-full">Week 5-6</time>
+                            <div class="text-xl font-bold text-slate-900 dark:text-slate-100">Competitive Analysis</div>
+                            <div class="timeline-marker"></div>
+                        </div>
+                        <div class="text-slate-600 dark:text-slate-400 mt-3">
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li>Identify direct and indirect competitors</li>
+                                <li>Analyze competitor strengths and weaknesses</li>
+                                <li>Map competitor pricing and positioning</li>
+                                <li>Identify gaps in the competitive landscape</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 4 -->
+                    <div class="relative pl-6 sm:pl-8 py-6 group timeline-item">
+                        <div class="font-caveat font-medium text-2xl text-pink-600 dark:text-pink-400 mb-1 sm:mb-0">Phase 4</div>
+                        <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
+                            <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-pink-600 dark:text-pink-400 bg-pink-100 dark:bg-pink-900/50 rounded-full">Week 7</time>
+                            <div class="text-xl font-bold text-slate-900 dark:text-slate-100">Product Validation</div>
+                            <div class="timeline-marker"></div>
+                        </div>
+                        <div class="text-slate-600 dark:text-slate-400 mt-3">
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li>Validate product-market fit</li>
+                                <li>Test pricing strategies</li>
+                                <li>Gather early customer feedback</li>
+                                <li>Conduct pre-launch surveys</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Timeline Item 5 -->
+                    <div class="relative pl-6 sm:pl-8 py-6 group timeline-item">
+                        <div class="font-caveat font-medium text-2xl text-pink-600 dark:text-pink-400 mb-1 sm:mb-0">Phase 5</div>
+                        <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
+                            <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-pink-600 dark:text-pink-400 bg-pink-100 dark:bg-pink-900/50 rounded-full">Week 8</time>
+                            <div class="text-xl font-bold text-slate-900 dark:text-slate-100">Advanced Analysis & Strategy</div>
+                            <div class="timeline-marker"></div>
+                        </div>
+                        <div class="text-slate-600 dark:text-slate-400 mt-3">
+                            <ul class="list-disc pl-5 space-y-2">
+                                <li>Compile research findings into actionable insights</li>
+                                <li>Develop go-to-market strategy</li>
+                                <li>Create marketing and positioning recommendations</li>
+                                <li>Finalize research documentation</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+                   
+        
+        
                     <div class="flex flex-col mt-20 sm:flex-row gap-4 justify-center">
                         <button onclick="showSection('market-investigation')" class="bg-pink-600 hover:bg-pink-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center">
                             🎯 Let's Get Started <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
@@ -541,7 +602,9 @@
                     <div class="mt-12">
                       <img src="https://bucket.mlcdn.com/a/3336/3336910/images/0953b807d6a746d122e2ee8054b51fdc0a0aef14.png" alt="Market Research Banner" class="w-full h-auto object-cover rounded-lg" loading="lazy">
                     </div>
-                    <div class="mt-16 bg-gradient-to-r from-pink-600 to-purple-600 py-12 px-4 sm:px-6 lg:px-8 rounded-lg shadow-lg">
+                    
+                    
+                    <div class="mt-0 bg-gradient-to-r from-pink-600 to-purple-600 py-12 px-4 sm:px-6 lg:px-8 rounded-lg shadow-lg">
                       <div class="max-w-5xl mx-auto text-center">
                         <blockquote class="text-white">
                           <p class="text-xl sm:text-2xl font-medium italic leading-relaxed">
@@ -554,7 +617,27 @@
                         </blockquote>
                       </div>
                     </div>   
-                </div> 
+                </div>
+                
+                
+                
+            
+            
+            
+            
+        </div>
+        
+        
+        
+        
+        
+        
+ 
+                
+                
+                
+                
+                
                 <div>
                   <p class="text-xs text-center my-2.5 text-gray-600 dark:text-slate-400">
                     <br>Developed with 💖 by Bebell Digital Solutions.<br>
@@ -731,7 +814,7 @@
 
         /** @type { {id: string, name: string, url: string, purpose: string, category: string, timeEstimate: string, instructions: string[], whatToExtract: string, icon: string}[] } */
         const researchTools = [ /* Data remains the same */
-             { id: "startup-ai", name: "Startup.ai", url: "https://startup.ai", purpose: "Startup idea generation and evaluation", category: "Idea Validation", timeEstimate: "30-45 minutes", instructions: [ "Visit startup.ai", "Browse evaluated startup ideas by category", "Filter by e-commerce/retail sectors", "Note trending business models", "Identify gaps in current market offerings" ], whatToExtract: "Validated business concepts, market gaps, trending sectors", icon: "lightbulb" }, { id: "validea", name: "Validea.co", url: "https://validea.co", purpose: "AI-powered business idea validation", category: "Idea Validation", timeEstimate: "20-30 minutes", instructions: [ "Input your business idea concept", "Answer validation questions about target market", "Review AI-generated feedback and scores", "Note suggested improvements and risks", "Save validation report for reference" ], whatToExtract: "Validation scores, risk assessment, improvement suggestions", icon: "check-circle" }, { id: "scira-ai", name: "Scira.ai", url: "https://scira.ai", purpose: "AI-powered search engine for research", category: "Market Research", timeEstimate: "15-20 minutes per search", instructions: [ "Search for industry-specific terms", "Use advanced filters for date range and source type", "Collect relevant market data and trends", "Save important findings with sources" ], whatToExtract: "Industry insights, market data, trend information", icon: "search" }, { id: "perplexity", name: "Perplexity.ai", url: "https://perplexity.ai", purpose: "Internet research with AI assistance", category: "Comprehensive Research", timeEstimate: "20-30 minutes per topic", instructions: [ "Ask specific questions about your market/niche", "Request sources and citations", "Follow up with related questions", "Export research findings", "Verify information with additional sources" ], whatToExtract: "Detailed market analysis, competitor information, industry trends", icon: "brain" }, { id: "particl-trends", name: "Particl Trends", url: "https://pitch.com/v/2025-particls-year-to-date-insights-dbckd6/b43ea207-c75e-4423-b07b-101e0e669c2a/", purpose: "Year-to-date market insights and trends", category: "Trend Analysis", timeEstimate: "25-35 minutes", instructions: [ "Access the Particl insights presentation", "Review category-specific trends", "Note seasonal patterns and emerging markets", "Identify growth opportunities", "Compare with your business idea alignment" ], whatToExtract: "Market trends, growth categories, seasonal insights", icon: "trending-up" }, { id: "answer-the-public", name: "AnswerThePublic", url: "https://answerthepublic.com", purpose: "Topic and keyword research", category: "Content & SEO Research", timeEstimate: "20-30 minutes", instructions: [ "Enter your main keyword/niche", "Select your target country/language", "Review 'What', 'How', 'Why' questions", "Note high-volume search queries", "Export data for content planning" ], whatToExtract: "Customer questions, content ideas, search volumes", icon: "help-circle" }, { id: "semrush", name: "Semrush", url: "https://semrush.com", purpose: "SEO and competitor analysis", category: "Competitive Intelligence", timeEstimate: "30-45 minutes", instructions: [ "Enter competitor domains", "Analyze their top keywords", "Review their advertising strategies", "Check backlink profiles", "Identify content gaps" ], whatToExtract: "Competitor keywords, ad strategies, market positioning", icon: "bar-chart" }, { id: "glimpse", name: "Glimpse", url: "https://meetglimpse.com/trends", purpose: "Google Trends analysis and predictions", category: "Trend Forecasting", timeEstimate: "25-35 minutes", instructions: [ "Search for relevant product categories", "Review trend graphs and predictions", "Analyze seasonal patterns", "Note emerging vs declining trends", "Export trend data" ], whatToExtract: "Trend predictions, seasonal patterns, market timing", icon: "activity" }, { id: "answer-socrates", name: "AnswerSocrates", url: "https://answersocrates.com", purpose: "Question-based keyword research", category: "Market Research", timeEstimate: "20-25 minutes", instructions: [ "Input your main keyword", "Review question categories", "Analyze search volume data", "Identify pain points and needs", "Save relevant questions for content strategy" ], whatToExtract: "Customer pain points, content opportunities, market needs", icon: "message-circle" }, { id: "particl", name: "Particl.com", url: "https://particl.com", purpose: "E-commerce market intelligence", category: "E-commerce Analytics", timeEstimate: "30-40 minutes", instructions: [ "Search for product categories in your niche", "Review market size and growth data", "Analyze brand performance metrics", "Note pricing trends and strategies", "Identify market opportunities" ], whatToExtract: "Market size, brand performance, pricing strategies", icon: "shopping-cart" }, { id: "similarweb", name: "SimilarWeb", url: "https://similarweb.com", purpose: "Website and competitor traffic analysis", category: "Competitive Intelligence", timeEstimate: "25-35 minutes per competitor", instructions: [ "Enter competitor website URLs", "Analyze traffic sources and volume", "Review audience demographics", "Check referral sources and partnerships", "Note marketing channels and strategies" ], whatToExtract: "Traffic data, audience insights, marketing channels", icon: "globe" }, { id: "facebook-insights", name: "Facebook Audience Insights", url: "https://www.facebook.com/business/insights/audience", purpose: "Social media audience research", category: "Audience Analysis", timeEstimate: "30-40 minutes", instructions: [ "Define your target audience criteria", "Analyze demographics and interests", "Review page likes and behaviors", "Note geographic concentrations", "Identify audience segments" ], whatToExtract: "Demographics, interests, behavior patterns", icon: "users" }, { id: "instagram-shopping", name: "Instagram Shopping", url: "https://business.instagram.com/shopping", purpose: "Social commerce trends analysis", category: "Social Commerce Research", timeEstimate: "20-30 minutes", instructions: [ "Browse relevant product categories", "Note trending products and brands", "Analyze pricing strategies", "Review engagement levels", "Identify influencer partnerships" ], whatToExtract: "Product trends, pricing benchmarks, engagement rates", icon: "instagram" }, { id: "pinterest-trends", name: "Pinterest Trends", url: "https://trends.pinterest.com", purpose: "Visual content and product trend analysis", category: "Visual Trend Research", timeEstimate: "20-30 minutes", instructions: [ "Search for relevant categories", "Review trending pins and boards", "Analyze seasonal content patterns", "Note visual style trends", "Identify content opportunities" ], whatToExtract: "Visual trends, seasonal patterns, content ideas", icon: "image" }, { id: "amazon-bestsellers", name: "Amazon Best Sellers", url: "https://www.amazon.com/bestsellers", purpose: "Product performance and market validation", category: "Product Research", timeEstimate: "30-45 minutes", instructions: [ "Browse relevant product categories", "Note top-selling products and brands", "Analyze pricing and review patterns", "Check product features and benefits", "Identify market gaps" ], whatToExtract: "Top products, pricing data, customer preferences", icon: "package" }, { id: "ebay-trending", name: "eBay Trending", url: "https://www.ebay.com/trending", purpose: "Marketplace trend analysis", category: "Marketplace Research", timeEstimate: "20-30 minutes", instructions: [ "Review trending categories", "Analyze sold listings and prices", "Note successful auction strategies", "Check international market variations", "Identify emerging product categories" ], whatToExtract: "Market trends, pricing data, global variations", icon: "gavel" }, { id: "etsy-trending", name: "Etsy Trending", url: "https://www.etsy.com/trending", purpose: "Handmade and creative market trends", category: "Niche Market Research", timeEstimate: "25-35 minutes", instructions: [ "Browse trending searches and products", "Analyze successful shop strategies", "Review pricing for handmade items", "Note seasonal and gift trends", "Identify crafting and DIY opportunities" ], whatToExtract: "Niche trends, creative opportunities, pricing strategies", icon: "heart" }, { id: "chatpdf", name: "ChatPDF", url: "https://chatpdf.com", purpose: "Document analysis and research", category: "Document Research", timeEstimate: "15-25 minutes per document", instructions: [ "Upload relevant industry reports or studies", "Ask specific questions about market data", "Extract key statistics and insights", "Summarize important findings", "Cross-reference with other sources" ], whatToExtract: "Industry data, market statistics, research insights", icon: "file-text" }, { id: "humata", name: "Humata.ai", url: "https://humata.ai", purpose: "AI-powered document chat and analysis", category: "Document Intelligence", timeEstimate: "20-30 minutes per document", instructions: [ "Upload market research documents", "Ask targeted questions about findings", "Request summaries and key insights", "Compare multiple documents", "Export important data points" ], whatToExtract: "Document insights, comparative analysis, key findings", icon: "brain" }, { id: "aithor", name: "AIThor.com", url: "https://aithor.com", purpose: "Deep analysis and content generation", category: "Advanced Analysis", timeEstimate: "30-45 minutes", instructions: [ "Input your research questions or data", "Request comprehensive analysis", "Generate detailed reports", "Verify findings with additional sources", "Integrate insights into business plan" ], whatToExtract: "Deep insights, analytical reports, strategic recommendations", icon: "cpu" }
+             { id: "startup-ai", name: "Startup.ai", url: "https://startup.ai", purpose: "Startup idea generation and evaluation", category: "Idea Validation", timeEstimate: "30-45 minutes", instructions: [ "Visit startup.ai", "Browse evaluated startup ideas by category", "Filter by e-commerce/retail sectors", "Note trending business models", "Identify gaps in current market offerings" ], whatToExtract: "Validated business concepts, market gaps, trending sectors", icon: "lightbulb" }, { id: "validea", name: "Validea.co", url: "https://validea.co", purpose: "AI-powered business idea validation", category: "Idea Validation", timeEstimate: "20-30 minutes", instructions: [ "Input your business idea concept", "Answer validation questions about target market", "Review AI-generated feedback and scores", "Note suggested improvements and risks", "Save validation report for reference" ], whatToExtract: "Validation scores, risk assessment, improvement suggestions", icon: "check-circle" }, { id: "scira-ai", name: "Scira.ai", url: "https://scira.ai", purpose: "AI-powered search engine for research", category: "Market Research", timeEstimate: "15-20 minutes per search", instructions: [ "Search for industry-specific terms", "Use advanced filters for date range and source type", "Collect relevant market data and trends", "Save important findings with sources" ], whatToExtract: "Industry insights, market data, trend information", icon: "search" }, { id: "perplexity", name: "Perplexity.ai", url: "https://perplexity.ai", purpose: "Internet research with AI assistance", category: "Comprehensive Research", timeEstimate: "20-30 minutes per topic", instructions: [ "Ask specific questions about your market/niche", "Request sources and citations", "Follow up with related questions", "Export research findings", "Verify information with additional sources" ], whatToExtract: "Detailed market analysis, competitor information, industry trends", icon: "brain" }, { id: "particl-trends", name: "Particl Trends", url: "https://pitch.com/v/2025-particls-year-to-date-insights-dbckd6/b43ea207-c75e-4423-b07b-101e0e669c2a/", purpose: "Year-to-date market insights and trends", category: "Trend Analysis", timeEstimate: "25-35 minutes", instructions: [ "Access the Particl insights presentation", "Review category-specific trends", "Note seasonal patterns and emerging markets", "Identify growth opportunities", "Compare with your business idea alignment" ], whatToExtract: "Market trends, growth categories, seasonal insights", icon: "trending-up" }, { id: "answer-the-public", name: "AnswerThePublic", url: "https://answerthepublic.com", purpose: "Topic and keyword research", category: "Content & SEO Research", timeEstimate: "20-30 minutes", instructions: [ "Enter your main keyword/niche", "Select your target country/language", "Review 'What', 'How', 'Why' questions", "Note high-volume search queries", "Export data for content planning" ], whatToExtract: "Customer questions, content ideas, search volumes", icon: "help-circle" }, { id: "semrush", name: "Semrush", url: "https://semrush.com", purpose: "SEO and competitor analysis", category: "Competitive Intelligence", timeEstimate: "30-45 minutes", instructions: [ "Enter competitor domains", "Analyze their top keywords", "Review their advertising strategies", "Check backlink profiles", "Identify content gaps" ], whatToExtract: "Competitor keywords, ad strategies, market positioning", icon: "bar-chart" }, { id: "glimpse", name: "Glimpse", url: "https://meetglimpse.com/trends", purpose: "Google Trends analysis and predictions", category: "Trend Forecasting", timeEstimate: "25-35 minutes", instructions: [ "Search for relevant product categories", "Review trend graphs and predictions", "Analyze seasonal patterns", "Note emerging vs declining trends", "Export trend data" ], whatToExtract: "Trend predictions, seasonal patterns, market timing", icon: "activity" }, { id: "answer-socrates", name: "AnswerSocrates", url: "https://answersocrates.com", purpose: "Question-based keyword research", category: "Market Research", timeEstimate: "20-25 minutes", instructions: [ "Input your main keyword", "Review question categories", "Analyze search volume data", "Identify pain points and needs", "Save relevant questions for content strategy" ], whatToExtract: "Customer pain points, content opportunities, market needs", icon: "message-circle" }, { id: "particl", name: "Particl.com", url: "https://particl.com", purpose: "E-commerce market intelligence", category: "E-commerce Analytics", timeEstimate: "30-40 minutes", instructions: [ "Search for product categories in your niche", "Review market size and growth data", "Analyze brand performance metrics", "Note pricing trends and strategies", "Identify market opportunities" ], whatToExtract: "Market size, brand performance, pricing strategies", icon: "shopping-cart" }, { id: "similarweb", name: "SimilarWeb", url: "https://similarweb.com", purpose: "Website and competitor traffic analysis", category: "Competitive Intelligence", timeEstimate: "25-35 minutes per competitor", instructions: [ "Enter competitor website URLs", "Analyze traffic sources and volume", "Review audience demographics", "Check referral sources and partnerships", "Note marketing channels and strategies" ], whatToExtract: "Traffic data, audience insights, marketing channels", icon: "globe" }, { id: "facebook-insights", name: "Facebook Audience Insights", url: "https://www.facebook.com/business/insights/audience", purpose: "Social media audience research", category: "Audience Analysis", timeEstimate: "30-40 minutes", instructions: [ "Define your target audience criteria", "Analyze demographics and interests", "Review page likes and behaviors", "Note geographic concentrations", "Identify audience segments" ], whatToExtract: "Demographics, interests, behavior patterns", icon: "users" }, { id: "instagram-shopping", name: "Instagram Shopping", url: "https://business.instagram.com/shopping", purpose: "Social commerce trends analysis", category: "Social Commerce Research", timeEstimate: "20-30 minutes", instructions: [ "Browse relevant product categories", "Note trending products and brands", "Analyze pricing strategies", "Review engagement levels", "Identify influencer partnerships" ], whatToExtract: "Product trends, pricing benchmarks, engagement rates", icon: "instagram" }, { id: "pinterest-trends", name: "Pinterest Trends", url: "https://trends.pinterest.com", purpose: "Visual content and product trend analysis", category: "Visual Trend Research", timeEstimate: "20-30 minutes", instructions: [ "Search for relevant categories", "Review trending pins and boards", "Analyze seasonal content patterns", "Note visual style trends", "Identify content opportunities" ], whatToExtract: "Visual trends, seasonal patterns, content ideas", icon: "image" }, { id: "amazon-bestsellers", name: "Amazon Best Sellers", url: "https://www.amazon.com/bestsellers", purpose: "Product performance and market validation", category: "Product Research", timeEstimate: "30-45 minutes", instructions: [ "Browse relevant product categories", "Note top-selling products and brands", "Analyze pricing and review patterns", "Check product features and benefits", "Identify market gaps" ], whatToExtract: "Top products, pricing data, customer preferences", icon: "package" }, { id: "ebay-trending", name: "eBay Trending", url: "https://www.ebay.com/trending", purpose: "Marketplace trend analysis", category: "Marketplace Research", timeEstimate: "20-30 minutes", instructions: [ "Review trending categories", "Analyze sold listings and prices", "Note successful auction strategies", "Check international market variations", "Identify emerging product categories" ], whatToExtract: "Market trends, pricing data, global variations", icon: "gavel" }, { id: "etsy-trending", name: "Etsy Trending", url: "https://www.etsy.com/trending", purpose: "Handmade and creative market trends", category: "Niche MarketResearch", timeEstimate: "25-35 minutes", instructions: [ "Browse trending searches and products", "Analyze successful shop strategies", "Review pricing for handmade items", "Note seasonal and gift trends", "Identify crafting and DIY opportunities" ], whatToExtract: "Niche trends, creative opportunities, pricing strategies", icon: "heart" }, { id: "chatpdf", name: "ChatPDF", url: "https://chatpdf.com", purpose: "Document analysis and research", category: "Document Research", timeEstimate: "15-25 minutes per document", instructions: [ "Upload relevant industry reports or studies", "Ask specific questions about market data", "Extract key statistics and insights", "Summarize important findings", "Cross-reference with other sources" ], whatToExtract: "Industry data, market statistics, research insights", icon: "file-text" }, { id: "humata", name: "Humata.ai", url: "https://humata.ai", purpose: "AI-powered document chat and analysis", category: "Document Intelligence", timeEstimate: "20-30 minutes per document", instructions: [ "Upload market research documents", "Ask targeted questions about findings", "Request summaries and key insights", "Compare multiple documents", "Export important data points" ], whatToExtract: "Document insights, comparative analysis, key findings", icon: "brain" }, { id: "aithor", name: "AIThor.com", url: "https://aithor.com", purpose: "Deep analysis and content generation", category: "Advanced Analysis", timeEstimate: "30-45 minutes", instructions: [ "Input your research questions or data", "Request comprehensive analysis", "Generate detailed reports", "Verify findings with additional sources", "Integrate insights into business plan" ], whatToExtract: "Deep insights, analytical reports, strategic recommendations", icon: "cpu" }
         ];
         
         /** @type { {id: number, title: string, description: string, tools: string[]}[] } */
