@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en"> <!-- Added lang attribute and class for dark mode -->
 
@@ -75,7 +76,6 @@
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
     
     <style>
-       <style>
         :root {
             --primary: #3a86ff;
             --primary-dark: #2667cc;
@@ -131,27 +131,27 @@
             transition: width 0.5s ease-in-out;
         }
         
+        /* Updated Timeline Styles START */
         .timeline-marker {
             position: absolute;
-            left: 0.5rem; 
-            top: 1.5rem; 
-            width: 0.75rem; 
-            height: 0.75rem; 
-            border-radius: 9999px; 
-            background-color: #DF1783; 
-            border: 4px solid #f8fafc;
-            box-sizing: content-box; 
-            transform: translateX(-50%);
-            z-index: 10;
+            left: 2px; /* From user's 'correct' CSS for marker */
+            top: 1.5rem;
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 9999px;
+            background: #DF1783; /* Use 'background' as in 'correct' CSS */
+            border: 4px solid #f8fafc; /* Base light mode border */
+            box-sizing: content-box;
+            transform: translateX(-50%); /* From 'correct' CSS, applies to all sizes */
+            z-index: 10; /* Retained from original full file */
         }
         html.dark .timeline-marker {
-            border: 4px solid #1f2937;
-            background-color: #db2777;
+            background: #db2777; /* Dark mode background override */
+            border: 4px solid #1f2937; /* Dark mode border */
         }
-
         @media (min-width: 640px) {
             .timeline-marker {
-                left: 1rem;
+                left: 6.5rem; /* From user's 'correct' CSS for marker */
             }
         }
 
@@ -159,25 +159,25 @@
             position: relative;
         }
         
-        .timeline-item:not(:last-child):after {
+        .timeline-item:not(:last-child):before { /* Use :before and :not(:last-child) */
             content: '';
             position: absolute;
+            left: 50%; /* From user's 'correct' CSS for line (mobile) */
             top: 0;
-            left: 0.5rem;
             height: 100%;
-            width: 2px;
-            background-color: #e2e8f0;
-            transform: translateX(-50%);
+            width: 1px; /* From user's 'correct' CSS for line */
+            background: #e2e8f0; /* From user's 'correct' CSS for line */
+            transform: translateX(-50%); /* From user's 'correct' CSS for line (mobile), keep for desktop too to align with marker logic */
         }
-        html.dark .timeline-item:not(:last-child):after {
-            background-color: #374151;
+        html.dark .timeline-item:not(:last-child):before {
+            background: #374151; /* Dark mode for line */
         }
-
         @media (min-width: 640px) {
-            .timeline-item:not(:last-child):after {
-                left: 1rem;
+            .timeline-item:not(:last-child):before {
+                left: 6.5rem; /* From user's 'correct' CSS for line (desktop) */
             }
         }
+        /* Updated Timeline Styles END */
 
         #back-to-top {
             position: fixed;
