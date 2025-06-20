@@ -49,6 +49,7 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
     
+    
     <script>
       if (window.tailwind) {
         window.tailwind.config = {
@@ -70,6 +71,8 @@
         };
       }
     </script>
+
+    
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
@@ -634,6 +637,10 @@
                   </p>
                 </div>
             </div>
+
+
+
+            
             
             <div class="fixed bottom-0 right-0 w-full md:bottom-6 md:right-12 md:w-auto z-50" :class="bannerOpen ? '' : 'hidden'" x-data="{ bannerOpen: true, videoOpen: false }">
                 <div x-show="videoOpen" class="fixed inset-0 bg-black bg-opacity-75 dark:bg-opacity-85 z-50 flex items-center justify-center p-4" @click.away="videoOpen = false">
@@ -663,6 +670,11 @@
                     </button>
                 </div>
             </div>
+
+
+
+
+            
     
             <div id="research-section" class="content-section hidden">
                 <div class="max-w-6xl mx-auto"> <!-- Added max-w-6xl mx-auto for consistent width -->
@@ -689,7 +701,22 @@
                         </div>
                     </div>
                 </div>
+
+                
+                <div>
+                  <p class="text-xs text-center my-2.5 text-gray-600 dark:text-slate-400">
+                    <br>Desarrollado con 💖 por Bebell Digital Solutions.<br>
+                    Copyright © 2024 • Todos los derechos reservados
+                  </p>
+                </div>
             </div>
+
+            
+            </div>
+
+
+
+        
             
             <div id="tools-directory-section" class="content-section hidden">
                 <div class="max-w-6xl mx-auto">
