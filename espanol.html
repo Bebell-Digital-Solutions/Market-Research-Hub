@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es"> <!-- Added lang attribute and class for dark mode -->
 
@@ -9,9 +10,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Primary Meta Tags -->
-    <title>Market Research Hub 🎯 | Plataforma de Estadísticas de Consumo Impulsada por IA</title>
+    <title>Market Research Hub 🎯 | Plataforma de Inteligencia de Consumidor Potenciada por IA</title>
     <meta name="description" content="Obtenga inteligencia de mercado en tiempo real, análisis del comportamiento del consumidor y evaluación comparativa de la competencia con nuestra plataforma de investigación impulsada por IA. Comience con informes gratuitos de la industria.">
-    <meta name="keywords" content="investigación de mercado, estadísticas del consumidor, análisis competitivo, tendencias de la industria, inteligencia de negocios, análisis con IA">
+    <meta name="keywords" content="investigación de mercado, inteligencia del consumidor, análisis competitivo, tendencias de la industria, inteligencia de negocios, análisis con IA">
     
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="https://bucket.mlcdn.com/a/3336/3336910/images/f221856a81ddf6731e6e4ff738772c8f608f11b8.png">
@@ -24,8 +25,8 @@
 
     <!-- Open Graph / Facebook / LinkedIn -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://marketresearchhub.com/">
-    <meta property="og:title" content="Market Research Hub | Estadísticas de Consumo Impulsadas por IA">
+    <meta property="og:url" content="https://marketresearchhub.com/"> <!-- Consider updating if Spanish version has a different URL -->
+    <meta property="og:title" content="Market Research Hub | Inteligencia de Consumidor Potenciada por IA">
     <meta property="og:description" content="Obtenga inteligencia de mercado en tiempo real y análisis del comportamiento del consumidor con nuestra plataforma impulsada por IA.">
     <meta property="og:image" content="https://marketresearchhub.com/images/social-share-1200x630.jpg">
     <meta property="og:image:width" content="1200">
@@ -34,7 +35,7 @@
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:creator" content="@ResearchHub">
-    <meta name="twitter:title" content="Market Research Hub | Estadísticas de Consumo Impulsadas por IA">
+    <meta name="twitter:title" content="Market Research Hub | Inteligencia de Consumidor Potenciada por IA">
     <meta name="twitter:description" content="Plataforma de inteligencia de mercado en tiempo real y análisis del comportamiento del consumidor.">
     <meta name="twitter:image" content="https://marketresearchhub.com/images/social-share-1200x630.jpg">
     
@@ -48,7 +49,6 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="//unpkg.com/alpinejs" defer></script>
-    
     
     <script>
       if (window.tailwind) {
@@ -71,8 +71,6 @@
         };
       }
     </script>
-
-    
     
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
@@ -133,27 +131,27 @@
             transition: width 0.5s ease-in-out;
         }
         
+        /* Updated Timeline Styles START */
         .timeline-marker {
             position: absolute;
-            left: 0.5rem; 
-            top: 1.5rem; 
-            width: 0.75rem; 
-            height: 0.75rem; 
-            border-radius: 9999px; 
-            background-color: #DF1783; 
-            border: 4px solid #f8fafc;
-            box-sizing: content-box; 
-            transform: translateX(-50%);
-            z-index: 10;
+            left: 2px; 
+            top: 1.5rem;
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 9999px;
+            background: #DF1783; 
+            border: 4px solid #f8fafc; 
+            box-sizing: content-box;
+            transform: translateX(-50%); 
+            z-index: 10; 
         }
         html.dark .timeline-marker {
-            border: 4px solid #1f2937;
-            background-color: #db2777;
+            background: #db2777; 
+            border: 4px solid #1f2937; 
         }
-
         @media (min-width: 640px) {
             .timeline-marker {
-                left: 1rem;
+                left: 6.5rem; 
             }
         }
 
@@ -161,25 +159,25 @@
             position: relative;
         }
         
-        .timeline-item::after {
+        .timeline-item:not(:last-child):before { 
             content: '';
             position: absolute;
+            left: 50%; 
             top: 0;
-            left: 0.5rem;
             height: 100%;
-            width: 2px;
-            background-color: #e2e8f0;
-            transform: translateX(-50%);
+            width: 1px; 
+            background: #e2e8f0; 
+            transform: translateX(-50%); 
         }
-        html.dark .timeline-item::after {
-            background-color: #374151;
+        html.dark .timeline-item:not(:last-child):before {
+            background: #374151; 
         }
-
         @media (min-width: 640px) {
-            .timeline-item::after {
-                left: 1rem;
+            .timeline-item:not(:last-child):before {
+                left: 6.5rem; 
             }
         }
+        /* Updated Timeline Styles END */
 
         #back-to-top {
             position: fixed;
@@ -190,20 +188,17 @@
             z-index: 1000; 
         }
         
-        /* New container styling for consistent width */
         .container-wrapper {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1.5rem;
         }
         
-        /* Timeline specific width constraints */
         .timeline-container {
             max-width: 900px;
             margin: 0 auto;
         }
         
-        /* Header styling */
         .section-header {
             text-align: center;
             margin-bottom: 2.5rem;
@@ -228,10 +223,10 @@
 <body class="min-h-screen bg-gray-50 dark:bg-slate-900 text-gray-900 dark:text-slate-200 transition-colors duration-300">
     
     <div class="custom-image-widget" style="position: relative; display: inline-block;">
-        <a href="https://bebell-digital-solutions.github.io/Market-Research-Hub/dark-theme">
+        <a href="https://elnegocio-digital.translate.goog/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=en-US&_x_tr_pto=wapp">
             <img class="custom-image" 
-                 src="https://bucket.mlcdn.com/a/3336/3336910/images/2891bb0a192c808fe1bb53e3905fc787957c2085.png" 
-                 alt="Ver en Inglés"
+                 src="https://bucket.mlcdn.com/a/3336/3336910/images/138f14304ea21715dfae64ae5fe1d71b08c2d451.png" 
+                 alt="El Negocio Digital"
                  style="display: block;"> 
         </a>
     </div>
@@ -244,7 +239,7 @@
                     <i data-lucide="search-check" class="w-6 h-6 text-white"></i>
                 </div>
                 <h1 class="text-2xl font-bold text-gray-900 dark:text-slate-100 mb-2">Market Research Hub 🎯</h1>
-                <p class="text-gray-600 dark:text-slate-400 text-sm leading-relaxed">Tu Guía Completa para el Éxito en el Mercado</p>
+                <p class="text-gray-600 dark:text-slate-400 text-sm leading-relaxed">Su Guía Completa para el Éxito en el Mercado</p>
             </div>
             
             <nav class="space-y-2 mb-8">
@@ -260,7 +255,7 @@
                 </a>
                 <a href="#" onclick="showSection('trend-identification')" class="nav-item flex items-center px-3 py-2 text-gray-700 dark:text-slate-300 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors duration-200">
                     <i data-lucide="file-text" class="w-4 h-4 mr-3"></i>
-                    <span class="font-medium">Identificación de Tendencias y Nichos</span>
+                    <span class="font-medium">ID de Tendencias y Nichos</span>
                     <i data-lucide="chevron-right" class="w-4 h-4 ml-auto"></i>
                 </a>
                 <a href="#" onclick="showSection('competitive-analysis')" class="nav-item flex items-center px-3 py-2 text-gray-700 dark:text-slate-300 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors duration-200">
@@ -270,7 +265,7 @@
                 </a>
                 <a href="#" onclick="showSection('product-validation')" class="nav-item flex items-center px-3 py-2 text-gray-700 dark:text-slate-300 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors duration-200">
                     <i data-lucide="file-text" class="w-4 h-4 mr-3"></i>
-                    <span class="font-medium">Validación de Producto</span>
+                    <span class="font-medium">Validación de Productos</span>
                     <i data-lucide="chevron-right" class="w-4 h-4 ml-auto"></i>
                 </a>
                 <a href="#" onclick="showSection('advanced-analysis')" class="nav-item flex items-center px-3 py-2 text-gray-700 dark:text-slate-300 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors duration-200">
@@ -288,7 +283,7 @@
             <div class="border-t border-gray-200 dark:border-slate-700 pt-6">
                 <div class="mb-4">
                     <h3 class="text-sm font-semibold text-gray-900 dark:text-slate-100 mb-2">📋 Plantilla de Investigación</h3>
-                    <p class="text-xs text-gray-600 dark:text-slate-400 mb-3">Obtén la plantilla completa de Notion para organizar tus hallazgos de investigación</p>
+                    <p class="text-xs text-gray-600 dark:text-slate-400 mb-3">Obtenga la plantilla Notion completa para organizar los hallazgos de su investigación</p>
                     <button onclick="handleNotionAccess()" class="w-full bg-pink-600 hover:bg-pink-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center">
                         <i data-lucide="external-link" class="w-4 h-4 mr-2"></i> Acceder a Plantilla
                     </button>
@@ -324,7 +319,7 @@
                         <i data-lucide="search-check" class="w-6 h-6 text-white"></i>
                     </div>
                     <h1 class="text-2xl font-bold text-gray-900 dark:text-slate-100 mb-2">Market Research Hub 🚀</h1>
-                    <p class="text-gray-600 dark:text-slate-400 text-sm leading-relaxed">Tu Guía Completa para el Éxito en el Mercado</p>
+                    <p class="text-gray-600 dark:text-slate-400 text-sm leading-relaxed">Su Guía Completa para el Éxito en el Mercado</p>
                 </div>
 
                 <nav class="space-y-2 mb-8">
@@ -335,13 +330,13 @@
                         <i data-lucide="file-text" class="w-4 h-4 mr-3"></i><span class="font-medium">Investigación de Mercado</span><i data-lucide="chevron-right" class="w-4 h-4 ml-auto"></i>
                     </a>
                     <a href="#" onclick="showSection('trend-identification'); toggleMobileMenu()" class="mobile-nav-item flex items-center px-3 py-2 text-gray-700 dark:text-slate-300 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors duration-200">
-                        <i data-lucide="file-text" class="w-4 h-4 mr-3"></i><span class="font-medium">Identificación de Tendencias y Nichos</span><i data-lucide="chevron-right" class="w-4 h-4 ml-auto"></i>
+                        <i data-lucide="file-text" class="w-4 h-4 mr-3"></i><span class="font-medium">ID de Tendencias y Nichos</span><i data-lucide="chevron-right" class="w-4 h-4 ml-auto"></i>
                     </a>
                     <a href="#" onclick="showSection('competitive-analysis'); toggleMobileMenu()" class="mobile-nav-item flex items-center px-3 py-2 text-gray-700 dark:text-slate-300 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors duration-200">
                         <i data-lucide="file-text" class="w-4 h-4 mr-3"></i><span class="font-medium">Análisis Competitivo</span><i data-lucide="chevron-right" class="w-4 h-4 ml-auto"></i>
                     </a>
                     <a href="#" onclick="showSection('product-validation'); toggleMobileMenu()" class="mobile-nav-item flex items-center px-3 py-2 text-gray-700 dark:text-slate-300 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors duration-200">
-                        <i data-lucide="file-text" class="w-4 h-4 mr-3"></i><span class="font-medium">Validación de Producto</span><i data-lucide="chevron-right" class="w-4 h-4 ml-auto"></i>
+                        <i data-lucide="file-text" class="w-4 h-4 mr-3"></i><span class="font-medium">Validación de Productos</span><i data-lucide="chevron-right" class="w-4 h-4 ml-auto"></i>
                     </a>
                     <a href="#" onclick="showSection('advanced-analysis'); toggleMobileMenu()" class="mobile-nav-item flex items-center px-3 py-2 text-gray-700 dark:text-slate-300 rounded-lg hover:bg-gray-100 dark:hover:bg-slate-700 transition-colors duration-200">
                         <i data-lucide="file-text" class="w-4 h-4 mr-3"></i><span class="font-medium">Análisis Avanzado</span><i data-lucide="chevron-right" class="w-4 h-4 ml-auto"></i>
@@ -354,7 +349,7 @@
                 <div class="border-t border-gray-200 dark:border-slate-700 pt-6">
                     <div class="mb-4">
                         <h3 class="text-sm font-semibold text-gray-900 dark:text-slate-100 mb-2">📋 Plantilla de Investigación</h3>
-                        <p class="text-xs text-gray-600 dark:text-slate-400 mb-3">Obtén la plantilla completa de Notion para organizar tus hallazgos de investigación</p>
+                        <p class="text-xs text-gray-600 dark:text-slate-400 mb-3">Obtenga la plantilla Notion completa para organizar los hallazgos de su investigación</p>
                         <button onclick="handleNotionAccess()" class="w-full bg-pink-600 hover:bg-pink-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 flex items-center justify-center">
                             <i data-lucide="external-link" class="w-4 h-4 mr-2"></i> Acceder a Plantilla
                         </button>
@@ -382,23 +377,23 @@
                     <div class="text-center mb-12">
                         <br>
                         <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 dark:text-slate-100 mb-6">
-                            Panel de 
-                            <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600">Investigación</span>
+                            Tablero de <span class="gradient-text">Investigación</span> 
                         </h1>
                         <p class="text-xl text-gray-600 dark:text-slate-400 max-w-3xl mx-auto mb-8">
-                            Tu guía completa para construir un negocio en línea sostenible a través de la investigación y el análisis estratégico. Desde la validación de la idea hasta el lanzamiento al mercado.
+                            Su guía completa para construir un negocio en línea sostenible a través de la investigación y el análisis estratégico. Desde la validación de la idea hasta el lanzamiento al mercado.
                         </p>
                         
                         
                         <div class="flex flex-col sm:flex-row gap-4 justify-center">
                             <button onclick="showSection('market-investigation')" class="bg-pink-600 hover:bg-pink-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center">
-                                🎯 Comenzar Investigación<i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                                🎯 Iniciar Viaje de Investigación <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
                             </button>
                             <button onclick="handleNotionAccess()" class="border border-gray-300 dark:border-slate-600 hover:border-gray-400 dark:hover:border-slate-500 text-gray-700 dark:text-slate-300 font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center">
-                                📋 Obtener Plantilla de Notion <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
+                                📋 Obtener Plantilla Notion <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
                             </button>
                         </div>
                     </div>
+                    
 
                     <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
                        <div class="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-gray-200 dark:border-slate-700 p-6 text-center">
@@ -432,17 +427,17 @@
                             <p class="text-gray-600 dark:text-slate-400 text-sm">Tasa de Éxito</p>
                         </div>
                     </div>
-                    
-                   
-                   
-                   
-                   
-                   
-                   
-                   
+
+
+
+
+
+
+
+
                    <div class="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-gray-200 dark:border-slate-700 p-8 mb-12">
                         <h2 class="text-5xl font-bold text-gray-900 dark:text-slate-100 tracking-tight mb-7 mt-8 text-center">
-                            🎯 Proceso de <span class="text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600">Investigación</span>
+                            🎯 Proceso de <span class="gradient-text">Investigación</span>
                         </h2>
                         <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
                             <div class="text-center" onclick="showSection('market-investigation')">
@@ -450,28 +445,28 @@
                                     <span class="text-2xl">🔍</span>
                                 </div>
                                 <h3 class="font-semibold text-gray-900 dark:text-slate-100 mb-2">Investigación de Mercado</h3>
-                                <p class="text-sm text-gray-600 dark:text-slate-400">Comprendiendo el panorama de tu mercado y oportunidades</p>
+                                <p class="text-sm text-gray-600 dark:text-slate-400">Comprender el panorama y las oportunidades de su mercado</p>
                             </div>
                             <div class="text-center" onclick="showSection('trend-identification')">
                                 <div class="w-16 h-16 bg-blue-100 dark:bg-blue-900/50 rounded-full flex items-center justify-center mx-auto mb-4 cursor-pointer hover:bg-blue-200 dark:hover:bg-blue-800/60 transition-colors">
                                     <span class="text-2xl">📈</span>
                                 </div>
                                 <h3 class="font-semibold text-gray-900 dark:text-slate-100 mb-2">Análisis de Tendencias</h3>
-                                <p class="text-sm text-gray-600 dark:text-slate-400">Descubriendo oportunidades en tendencia y brechas de mercado</p>
+                                <p class="text-sm text-gray-600 dark:text-slate-400">Descubrir oportunidades de tendencia y brechas de mercado</p>
                             </div>
                             <div class="text-center" onclick="showSection('competitive-analysis')">
                                 <div class="w-16 h-16 bg-green-100 dark:bg-green-900/50 rounded-full flex items-center justify-center mx-auto mb-4 cursor-pointer hover:bg-green-200 dark:hover:bg-green-800/60 transition-colors">
                                     <span class="text-2xl">🏆</span>
                                 </div>
                                 <h3 class="font-semibold text-gray-900 dark:text-slate-100 mb-2">Inteligencia Competitiva</h3>
-                                <p class="text-sm text-gray-600 dark:text-slate-400">Analizando competidores y posicionamiento en el mercado</p>
+                                <p class="text-sm text-gray-600 dark:text-slate-400">Analizar competidores y posicionamiento en el mercado</p>
                             </div>
                             <div class="text-center" onclick="showSection('product-validation')">
                                 <div class="w-16 h-16 bg-purple-100 dark:bg-purple-900/50 rounded-full flex items-center justify-center mx-auto mb-4 cursor-pointer hover:bg-purple-200 dark:hover:bg-purple-800/60 transition-colors">
                                     <span class="text-2xl">✅</span>
                                 </div>
-                                <h3 class="font-semibold text-gray-900 dark:text-slate-100 mb-2">Validación de Producto</h3>
-                                <p class="text-sm text-gray-600 dark:text-slate-400">Validando la demanda del producto y estrategias de precios</p>
+                                <h3 class="font-semibold text-gray-900 dark:text-slate-100 mb-2">Validación de Productos</h3>
+                                <p class="text-sm text-gray-600 dark:text-slate-400">Validar la demanda de productos y estrategias de precios</p>
                             </div>
                             <div class="text-center" onclick="showSection('advanced-analysis')">
                                 <div class="w-16 h-16 bg-yellow-100 dark:bg-yellow-900/50 rounded-full flex items-center justify-center mx-auto mb-4 cursor-pointer hover:bg-yellow-200 dark:hover:bg-yellow-800/60 transition-colors">
@@ -484,121 +479,109 @@
                     </div>
                 </div>
                 
-                
-                
-                
-                
-                
-               <!-- Fixed Timeline Section -->
         <div class="max-w-6xl mx-auto bg-white dark:bg-slate-800 rounded-xl shadow-sm border border-gray-200 dark:border-slate-700 p-6 sm:p-8 mb-10">
             <div class="section-header">
                 <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-slate-100 tracking-tight">
-                    ⏳ Cronograma de<span class="gradient-text"> Investigación</span>
+                    ⏳ Cronograma de <span class="gradient-text">Investigación</span>
                 </h2>
             </div>
             
-            <!-- Timeline container with fixed width -->
-            <div class="timeline-container">
-                <div class="space-y-6">
-                    <!-- Timeline Item 1 -->
-                    <div class="relative pl-6 sm:pl-8 py-6 group timeline-item">
-                        <div class="font-caveat font-medium text-2xl text-pink-600 dark:text-pink-400 mb-1 sm:mb-0 sm:ml-22">Fase 1</div>
-                        <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
-                         
-                            <div class="text-xl font-bold text-slate-900 dark:text-slate-100 sm:ml-22">Investigación de Mercado</div>
-                            <div class="timeline-marker"></div>
-                        </div>
-                        <div class="text-slate-600 dark:text-slate-400 mt-3 sm:ml-22">
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Define tu mercado objetivo y perfiles de cliente</li>
-                                <li>Analiza el tamaño del mercado y potencial de crecimiento</li>
-                                <li>Identifica tendencias y dinámicas clave del mercado</li>
-                                <li>Realiza un análisis FODA del mercado</li>
-                            </ul>
-                        </div>
+ <div class="flex justify-center">
+        <div class="w-full max-w-4xl"> 
+                <div class="space-y-8 mt-6">
+                <!-- Phase 1 -->
+                <div class="relative pl-8 sm:pl-32 py-6 group timeline-item">
+                    <div class="font-caveat font-medium text-2xl text-pink-600 dark:text-pink-400 mb-1 sm:mb-0">Fase 1</div>
+                    <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
+                        <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-pink-600 bg-pink-100 dark:text-pink-200 dark:bg-pink-700/50 rounded-full">Semana 1-2</time>
+                        <div class="text-xl font-bold text-slate-900 dark:text-slate-100">Investigación de Mercado</div>
+                        <div class="timeline-marker"></div>
                     </div>
-                    
-                    <!-- Timeline Item 2 -->
-                    <div class="relative pl-6 sm:pl-8 py-6 group timeline-item">
-                        <div class="font-caveat font-medium text-2xl text-pink-600 dark:text-pink-400 mb-1 sm:mb-0 sm:ml-22">Fase 2</div>
-                        <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
-                          
-                            <div class="text-xl font-bold text-slate-900 dark:text-slate-100 sm:ml-22">Identificación de Tendencias y Nichos</div>
-                            <div class="timeline-marker"></div>
-                        </div>
-                        <div class="text-slate-600 dark:text-slate-400 mt-3 sm:ml-22">
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Identifica tendencias emergentes en tu industria</li>
-                                <li>Descubre oportunidades de nicho rentables</li>
-                                <li>Analiza tendencias de búsqueda y movimiento en redes sociales</li>
-                                <li>Valida la demanda mediante investigación de palabras clave</li>
-                            </ul>
-                        </div>
+                    <div class="text-slate-600 dark:text-slate-400">
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Defina su mercado objetivo y perfiles de cliente</li>
+                            <li>Analice el tamaño del mercado y el potencial de crecimiento</li>
+                            <li>Identifique tendencias y dinámicas clave del mercado</li>
+                            <li>Realice un análisis FODA del mercado</li>
+                        </ul>
                     </div>
-                    
-                    <!-- Timeline Item 3 -->
-                    <div class="relative pl-6 sm:pl-8 py-6 group timeline-item">
-                        <div class="font-caveat font-medium text-2xl text-pink-600 dark:text-pink-400 mb-1 sm:mb-0 sm:ml-22">Fase 3</div>
-                        <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
-                          
-                            <div class="text-xl font-bold text-slate-900 dark:text-slate-100 sm:ml-22">Análisis Competitivo</div>
-                            <div class="timeline-marker"></div>
-                        </div>
-                        <div class="text-slate-600 dark:text-slate-400 mt-3 sm:ml-22">
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Identifica competidores directos e indirectos</li>
-                                <li>Analiza las fortalezas y debilidades de los competidores</li>
-                                <li>Mapea los precios y el posicionamiento de los competidores</li>
-                                <li>Identifica brechas en el panorama competitivo</li>
-                            </ul>
-                        </div>
+                </div>
+                
+                <!-- Phase 2 -->
+                <div class="relative pl-8 sm:pl-32 py-6 group timeline-item">
+                    <div class="font-caveat font-medium text-2xl text-pink-600 dark:text-pink-400 mb-1 sm:mb-0">Fase 2</div>
+                    <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
+                        <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-pink-600 bg-pink-100 dark:text-pink-200 dark:bg-pink-700/50 rounded-full">Semana 3-4</time>
+                        <div class="text-xl font-bold text-slate-900 dark:text-slate-100">ID de Tendencias y Nichos</div>
+                        <div class="timeline-marker"></div>
                     </div>
-                    
-                    <!-- Timeline Item 4 -->
-                    <div class="relative pl-6 sm:pl-8 py-6 group timeline-item">
-                        <div class="font-caveat font-medium text-2xl text-pink-600 dark:text-pink-400 mb-1 sm:mb-0 sm:ml-22">Fase 4</div>
-                        <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
-                           
-                            <div class="text-xl font-bold text-slate-900 dark:text-slate-100 sm:ml-22">Validación de Producto</div>
-                            <div class="timeline-marker"></div>
-                        </div>
-                        <div class="text-slate-600 dark:text-slate-400 mt-3 sm:ml-22">
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Valida el ajuste producto-mercado</li>
-                                <li>Prueba estrategias de precios</li>
-                                <li>Recopila retroalimentación temprana de clientes</li>
-                                <li>Realiza encuestas previas al lanzamiento</li>
-                            </ul>
-                        </div>
+                    <div class="text-slate-600 dark:text-slate-400">
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Identifique tendencias emergentes en su industria</li>
+                            <li>Descubra oportunidades de nicho rentables</li>
+                            <li>Analice tendencias de búsqueda y revuelo en redes sociales</li>
+                            <li>Valide la demanda mediante investigación de palabras clave</li>
+                        </ul>
                     </div>
-                    
-                    <!-- Timeline Item 5 -->
-                    <div class="relative pl-6 sm:pl-8 py-6 group timeline-item">
-                        <div class="font-caveat font-medium text-2xl text-pink-600 dark:text-pink-400 mb-1 sm:mb-0 sm:ml-22">Fase 5</div>
-                        <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
-                           
-                            <div class="text-xl font-bold text-slate-900 dark:text-slate-100 sm:ml-22">Análisis Avanzado y Estrategia</div>
-                            <div class="timeline-marker"></div>
-                        </div>
-                        <div class="text-slate-600 dark:text-slate-400 mt-3 sm:ml-22">
-                            <ul class="list-disc pl-5 space-y-2">
-                                <li>Recopila los hallazgos de la investigación en ideas accionables</li>
-                                <li>Desarrolla una estrategia de salida al mercado</li>
-                                <li>Crea recomendaciones de marketing y posicionamiento</li>
-                                <li>Finaliza la documentación de la investigación</li>
-                            </ul>
+                </div>
+                
+                <!-- Phase 3 -->
+                <div class="relative pl-8 sm:pl-32 py-6 group timeline-item">
+                    <div class="font-caveat font-medium text-2xl text-pink-600 dark:text-pink-400 mb-1 sm:mb-0">Fase 3</div>
+                    <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
+                        <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-pink-600 bg-pink-100 dark:text-pink-200 dark:bg-pink-700/50 rounded-full">Semana 5-6</time>
+                        <div class="text-xl font-bold text-slate-900 dark:text-slate-100">Análisis Competitivo</div>
+                        <div class="timeline-marker"></div>
+                    </div>
+                    <div class="text-slate-600 dark:text-slate-400">
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Identifique competidores directos e indirectos</li>
+                            <li>Analice las fortalezas y debilidades de los competidores</li>
+                            <li>Mapee los precios y el posicionamiento de los competidores</li>
+                            <li>Identifique brechas en el panorama competitivo</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Phase 4 -->
+                <div class="relative pl-8 sm:pl-32 py-6 group timeline-item">
+                    <div class="font-caveat font-medium text-2xl text-pink-600 dark:text-pink-400 mb-1 sm:mb-0">Fase 4</div>
+                    <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
+                        <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-pink-600 bg-pink-100 dark:text-pink-200 dark:bg-pink-700/50 rounded-full">Semana 7</time>
+                        <div class="text-xl font-bold text-slate-900 dark:text-slate-100">Validación de Productos</div>
+                        <div class="timeline-marker"></div>
+                    </div>
+                    <div class="text-slate-600 dark:text-slate-400">
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Valide el ajuste producto-mercado</li>
+                            <li>Pruebe estrategias de precios</li>
+                            <li>Recopile comentarios tempranos de clientes</li>
+                            <li>Realice encuestas previas al lanzamiento</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Phase 5 -->
+                <div class="relative pl-8 sm:pl-32 py-6 group timeline-item">
+                    <div class="font-caveat font-medium text-2xl text-pink-600 dark:text-pink-400 mb-1 sm:mb-0">Fase 5</div>
+                    <div class="flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden">
+                        <time class="sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-pink-600 bg-pink-100 dark:text-pink-200 dark:bg-pink-700/50 rounded-full">Semana 8</time>
+                        <div class="text-xl font-bold text-slate-900 dark:text-slate-100">Análisis Avanzado y Estrategia</div>
+                        <div class="timeline-marker"></div>
+                    </div>
+                    <div class="text-slate-600 dark:text-slate-400">
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Compile los hallazgos de la investigación en ideas accionables</li>
+                            <li>Desarrolle una estrategia de salida al mercado</li>
+                            <li>Cree recomendaciones de marketing y posicionamiento</li>
+                            <li>Finalice la documentación de la investigación</li>
+                        </ul>
                         </div>
                     </div>
                 </div>
             </div>
-      
-        
-        
-        
-        
-        
-        
-        
+            </div>
+            
         
                     <div class="flex flex-col mt-20 sm:flex-row gap-4 justify-center">
                         <button onclick="showSection('market-investigation')" class="bg-pink-600 hover:bg-pink-700 text-white font-medium py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center">
@@ -608,12 +591,14 @@
                     <div class="mt-12">
                       <img src="https://bucket.mlcdn.com/a/3336/3336910/images/0953b807d6a746d122e2ee8054b51fdc0a0aef14.png" alt="Banner de Investigación de Mercado" class="w-full h-auto object-cover rounded-lg" loading="lazy">
                     </div>
+                    
+                    
                     <div class="mt-0 bg-gradient-to-r from-pink-600 to-purple-600 py-12 px-4 sm:px-6 lg:px-8 rounded-lg shadow-lg">
                       <div class="max-w-5xl mx-auto text-center">
                         <blockquote class="text-white">
                           <p class="text-xl sm:text-2xl font-medium italic leading-relaxed">
-                            "El secreto del éxito en los negocios es la preparación, la investigación y el trabajo duro. 
-                            <span class="block mt-4 font-bold text-white/90">La buena fortuna es lo que sucede cuando la oportunidad se encuentra con la preparación.</span>"
+                            "El secreto del éxito en los negocios es la preparación, la investigación y el trabajo duro.
+                            <span class="block mt-4 font-bold text-white/90">La buena fortuna es lo que sucede cuando la oportunidad se encuentra con la preparación.</span>
                           </p>
                           <footer class="mt-6 text-white/80">
                             <cite class="font-semibold not-italic">— Zig Ziglar</cite>
@@ -622,25 +607,10 @@
                       </div>
                     </div>   
                 </div>
-                
-             
-                
-                
-                
-                
-                
-                
-                <div>
-                  <p class="text-xs text-center my-2.5 text-gray-600 dark:text-slate-400">
-                    <br>Desarrollado con 💖 por Bebell Digital Solutions.<br>
-                    Copyright © 2024 • Todos los derechos reservados
-                  </p>
-                </div>
+
+        </div>
+        
             </div>
-
-
-
-            
             
             <div class="fixed bottom-0 right-0 w-full md:bottom-6 md:right-12 md:w-auto z-50" :class="bannerOpen ? '' : 'hidden'" x-data="{ bannerOpen: true, videoOpen: false }">
                 <div x-show="videoOpen" class="fixed inset-0 bg-black bg-opacity-75 dark:bg-opacity-85 z-50 flex items-center justify-center p-4" @click.away="videoOpen = false">
@@ -670,19 +640,14 @@
                     </button>
                 </div>
             </div>
-
-
-
-
-            
     
             <div id="research-section" class="content-section hidden">
-                <div class="max-w-6xl mx-auto"> <!-- Added max-w-6xl mx-auto for consistent width -->
+                <div class="max-w-6xl mx-auto"> 
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                         <div class="lg:col-span-1">
                             <div class="bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-gray-200 dark:border-slate-700 p-6 sticky top-8">
                                 <h2 class="text-xl font-bold text-gray-900 dark:text-slate-100 mb-4 flex items-center">
-                                    <i data-lucide="check-square" class="w-5 h-5 mr-2 text-pink-600 dark:text-pink-400"></i> Progreso de Investigación
+                                    <i data-lucide="check-square" class="w-5 h-5 mr-2 text-pink-600 dark:text-pink-400"></i> Progreso de la Investigación
                                 </h2>
                                 <div class="space-y-4" id="progress-checklist"></div>
                                 <div class="mt-6 pt-4 border-t border-gray-200 dark:border-slate-700">
@@ -701,22 +666,7 @@
                         </div>
                     </div>
                 </div>
-
-                
-                <div>
-                  <p class="text-xs text-center my-2.5 text-gray-600 dark:text-slate-400">
-                    <br>Desarrollado con 💖 por Bebell Digital Solutions.<br>
-                    Copyright © 2024 • Todos los derechos reservados
-                  </p>
-                </div>
             </div>
-
-            
-            </div>
-
-
-
-        
             
             <div id="tools-directory-section" class="content-section hidden">
                 <div class="max-w-6xl mx-auto">
@@ -738,7 +688,7 @@
                                         <option value="Investigación de Mercado">Investigación de Mercado</option>
                                         <option value="Inteligencia Competitiva">Inteligencia Competitiva</option>
                                         <option value="Análisis de Tendencias">Análisis de Tendencias</option>
-                                        <option value="Investigación de Comercio Social">Comercio Social</option>
+                                        <option value="Investigación de Comercio Social">Investigación de Comercio Social</option>
                                         <option value="Investigación de Productos">Investigación de Productos</option>
                                         <option value="Investigación de Documentos">Investigación de Documentos</option>
                                     </select>
@@ -752,6 +702,8 @@
                                 </div>
                             </div>
                         </div>
+                        
+                        
                         <div class="lg:w-3/4">
                             <div class="mb-6">
                                 <h1 class="text-3xl font-bold text-gray-900 dark:text-slate-100 mb-2">🛠️ Directorio de Herramientas de Investigación</h1>
@@ -762,9 +714,18 @@
                     </div>
                 </div>
             </div>
+            
+                   <div>
+                  <p class="mb-20 text-xs text-center my-2.5 text-gray-600 dark:text-slate-400">
+                    <br>Desarrollado con 💖 por Bebell Digital Solutions.<br>
+                    Copyright © 2024 • Todos los derechos reservados
+                  </p>
+                </div> 
+            
+            
         </div>
     </div>
-    
+
     <div id="tool-modal" class="fixed inset-0 bg-black bg-opacity-50 dark:bg-opacity-75 flex items-center justify-center z-50 p-4 hidden">
         <div class="bg-white dark:bg-slate-800 rounded-lg max-w-2xl max-h-[90vh] overflow-y-auto p-6 w-full">
             <div class="flex justify-between items-center mb-4">
@@ -780,7 +741,7 @@
     <div id="notion-modal" class="fixed inset-0 bg-black bg-opacity-50 dark:bg-opacity-75 flex items-center justify-center z-50 p-4 hidden">
         <div class="bg-white dark:bg-slate-800 rounded-lg max-w-4xl max-h-[90vh] overflow-y-auto p-6 w-full">
             <div class="flex justify-between items-center mb-4">
-                <h2 class="text-2xl font-bold text-gray-900 dark:text-slate-100">📋 Acceso a Plantilla de Notion</h2>
+                <h2 class="text-2xl font-bold text-gray-900 dark:text-slate-100">📋 Acceso a Plantilla Notion</h2>
                 <button onclick="closeNotionModal()" aria-label="Cerrar modal de Notion" class="text-gray-500 dark:text-slate-400 hover:text-gray-700 dark:hover:text-slate-200">
                     <i data-lucide="x" class="w-6 h-6"></i>
                 </button>
@@ -788,11 +749,11 @@
             <div class="mb-6">
                 <h3 class="text-lg font-semibold text-gray-900 dark:text-slate-100 mb-3">📥 Cómo Importar Esta Plantilla a Notion:</h3>
                 <ol class="list-decimal list-inside space-y-2 text-gray-700 dark:text-slate-300">
-                    <li>Copia el contenido de la plantilla a continuación</li>
-                    <li>Abre Notion y crea una nueva página</li>
-                    <li>Pega el contenido en tu nueva página</li>
+                    <li>Copie el contenido de la plantilla a continuación</li>
+                    <li>Abra Notion y cree una nueva página</li>
+                    <li>Pegue el contenido en su nueva página</li>
                     <li>Notion formateará automáticamente las tablas y la estructura</li>
-                    <li>Personaliza los campos y secciones según las necesidades de tu negocio</li>
+                    <li>Personalice los campos y secciones según sea necesario para su negocio</li>
                 </ol>
             </div>
             <div class="mb-4">
@@ -806,8 +767,8 @@
             </div>
             <div class="mt-4 p-4 bg-blue-50 dark:bg-blue-900/30 rounded-lg">
                 <p class="text-blue-800 dark:text-blue-300 text-sm">
-                    <strong>💡 Consejo Pro:</strong> Después de importar a Notion, puedes convertir las tablas de texto en tablas de base de datos para una mejor funcionalidad. 
-                    Selecciona la tabla y luego elige "Convertir en base de datos" en el menú.
+                    <strong>💡 Consejo Pro:</strong> Después de importar a Notion, puede convertir las tablas de texto en tablas de base de datos para una mejor funcionalidad. 
+                    Seleccione la tabla, luego elija "Convertir en base de datos" desde el menú.
                 </p>
             </div>
         </div>
@@ -827,177 +788,569 @@
         /** @type {Window & typeof globalThis & { confetti?: (options?: any) => void; lucide?: { createIcons: () => void; }; tailwind?: { config?: any; } }} */
         const globalWindow = window;
 
-
         /** @type { {id: string, name: string, url: string, purpose: string, category: string, timeEstimate: string, instructions: string[], whatToExtract: string, icon: string}[] } */
         const researchTools = [
-            { id: "startup-ai", name: "Startup.ai", url: "https://startup.ai", purpose: "Generación y evaluación de ideas de startups", category: "Validación de Ideas", timeEstimate: "30-45 minutos", instructions: [ "Visita startup.ai", "Navega por ideas de startups evaluadas por categoría", "Filtra por sectores de comercio electrónico/minorista", "Toma nota de modelos de negocio en tendencia", "Identifica brechas en las ofertas actuales del mercado" ], whatToExtract: "Conceptos de negocio validados, brechas de mercado, sectores en tendencia", icon: "lightbulb" },
-            { id: "validea", name: "Validea.co", url: "https://validea.co", purpose: "Validación de ideas de negocio impulsada por IA", category: "Validación de Ideas", timeEstimate: "20-30 minutos", instructions: [ "Ingresa tu concepto de idea de negocio", "Responde preguntas de validación sobre el mercado objetivo", "Revisa los comentarios y puntuaciones generados por IA", "Toma nota de las mejoras y riesgos sugeridos", "Guarda el informe de validación como referencia" ], whatToExtract: "Puntuaciones de validación, evaluación de riesgos, sugerencias de mejora", icon: "check-circle" },
-            { id: "scira-ai", name: "Scira.ai", url: "https://scira.ai", purpose: "Motor de búsqueda para investigación impulsado por IA", category: "Investigación de Mercado", timeEstimate: "15-20 minutos por búsqueda", instructions: [ "Busca términos específicos de la industria", "Usa filtros avanzados para rango de fechas y tipo de fuente", "Recopila datos y tendencias relevantes del mercado", "Guarda hallazgos importantes con sus fuentes" ], whatToExtract: "Perspectivas de la industria, datos de mercado, información de tendencias", icon: "search" },
-            { id: "perplexity", name: "Perplexity.ai", url: "https://perplexity.ai", purpose: "Investigación en internet con asistencia de IA", category: "Investigación Integral", timeEstimate: "20-30 minutos por tema", instructions: [ "Haz preguntas específicas sobre tu mercado/nicho", "Solicita fuentes y citas", "Continúa con preguntas relacionadas", "Exporta los hallazgos de la investigación", "Verifica la información con fuentes adicionales" ], whatToExtract: "Análisis detallado del mercado, información de la competencia, tendencias de la industria", icon: "brain" },
-            { id: "particl-trends", name: "Particl Trends", url: "https://pitch.com/v/2025-particls-year-to-date-insights-dbckd6/b43ea207-c75e-4423-b07b-101e0e669c2a/", purpose: "Perspectivas y tendencias del mercado acumuladas del año", category: "Análisis de Tendencias", timeEstimate: "25-35 minutos", instructions: [ "Accede a la presentación de perspectivas de Particl", "Revisa las tendencias específicas por categoría", "Toma nota de patrones estacionales y mercados emergentes", "Identifica oportunidades de crecimiento", "Compara con la alineación de tu idea de negocio" ], whatToExtract: "Tendencias del mercado, categorías de crecimiento, perspectivas estacionales", icon: "trending-up" },
-            { id: "answer-the-public", name: "AnswerThePublic", url: "https://answerthepublic.com", purpose: "Investigación de temas y palabras clave", category: "Investigación de Contenido y SEO", timeEstimate: "20-30 minutos", instructions: [ "Ingresa tu palabra clave/nicho principal", "Selecciona tu país/idioma objetivo", "Revisa las preguntas 'Qué', 'Cómo', 'Por qué'", "Toma nota de las consultas de búsqueda de alto volumen", "Exporta datos para la planificación de contenido" ], whatToExtract: "Preguntas de clientes, ideas de contenido, volúmenes de búsqueda", icon: "help-circle" },
-            { id: "semrush", name: "Semrush", url: "https://semrush.com", purpose: "Análisis SEO y de la competencia", category: "Inteligencia Competitiva", timeEstimate: "30-45 minutos", instructions: [ "Ingresa dominios de la competencia", "Analiza sus palabras clave principales", "Revisa sus estrategias publicitarias", "Verifica perfiles de backlinks", "Identifica brechas de contenido" ], whatToExtract: "Palabras clave de la competencia, estrategias publicitarias, posicionamiento en el mercado", icon: "bar-chart" },
-            { id: "glimpse", name: "Glimpse", url: "https://meetglimpse.com/trends", purpose: "Análisis y predicciones de Google Trends", category: "Pronóstico de Tendencias", timeEstimate: "25-35 minutos", instructions: [ "Busca categorías de productos relevantes", "Revisa gráficos de tendencias y predicciones", "Analiza patrones estacionales", "Toma nota de tendencias emergentes vs. declinantes", "Exporta datos de tendencias" ], whatToExtract: "Predicciones de tendencias, patrones estacionales, sincronización con el mercado", icon: "activity" },
-            { id: "answer-socrates", name: "AnswerSocrates", url: "https://answersocrates.com", purpose: "Investigación de palabras clave basada en preguntas", category: "Investigación de Mercado", timeEstimate: "20-25 minutos", instructions: [ "Ingresa tu palabra clave principal", "Revisa las categorías de preguntas", "Analiza los datos de volumen de búsqueda", "Identifica puntos débiles y necesidades", "Guarda preguntas relevantes para la estrategia de contenido" ], whatToExtract: "Puntos débiles de los clientes, oportunidades de contenido, necesidades del mercado", icon: "message-circle" },
-            { id: "particl", name: "Particl.com", url: "https://particl.com", purpose: "Inteligencia de mercado para comercio electrónico", category: "Analítica de E-commerce", timeEstimate: "30-40 minutos", instructions: [ "Busca categorías de productos en tu nicho", "Revisa el tamaño del mercado y los datos de crecimiento", "Analiza métricas de rendimiento de marca", "Toma nota de tendencias y estrategias de precios", "Identifica oportunidades de mercado" ], whatToExtract: "Tamaño del mercado, rendimiento de marca, estrategias de precios", icon: "shopping-cart" },
-            { id: "similarweb", name: "SimilarWeb", url: "https://similarweb.com", purpose: "Análisis de tráfico web y de la competencia", category: "Inteligencia Competitiva", timeEstimate: "25-35 minutos por competidor", instructions: [ "Ingresa URLs de sitios web de la competencia", "Analiza fuentes y volumen de tráfico", "Revisa datos demográficos de la audiencia", "Verifica fuentes de referencia y asociaciones", "Toma nota de canales y estrategias de marketing" ], whatToExtract: "Datos de tráfico, perspectivas de la audiencia, canales de marketing", icon: "globe" },
-            { id: "facebook-insights", name: "Facebook Audience Insights", url: "https://www.facebook.com/business/insights/audience", purpose: "Investigación de audiencias en redes sociales", category: "Análisis de Audiencia", timeEstimate: "30-40 minutos", instructions: [ "Define los criterios de tu audiencia objetivo", "Analiza datos demográficos e intereses", "Revisa 'Me gusta' de páginas y comportamientos", "Toma nota de concentraciones geográficas", "Identifica segmentos de audiencia" ], whatToExtract: "Datos demográficos, intereses, patrones de comportamiento", icon: "users" },
-            { id: "instagram-shopping", name: "Instagram Shopping", url: "https://business.instagram.com/shopping", purpose: "Análisis de tendencias en comercio social", category: "Investigación de Comercio Social", timeEstimate: "20-30 minutos", instructions: [ "Navega por categorías de productos relevantes", "Toma nota de productos y marcas en tendencia", "Analiza estrategias de precios", "Revisa niveles de interacción", "Identifica colaboraciones con influencers" ], whatToExtract: "Tendencias de productos, benchmarks de precios, tasas de interacción", icon: "instagram" },
-            { id: "pinterest-trends", name: "Pinterest Trends", url: "https://trends.pinterest.com", purpose: "Análisis de tendencias de contenido visual y productos", category: "Investigación de Tendencias Visuales", timeEstimate: "20-30 minutos", instructions: [ "Busca categorías relevantes", "Revisa pines y tableros en tendencia", "Analiza patrones de contenido estacional", "Toma nota de tendencias de estilo visual", "Identifica oportunidades de contenido" ], whatToExtract: "Tendencias visuales, patrones estacionales, ideas de contenido", icon: "image" },
-            { id: "amazon-bestsellers", name: "Amazon Best Sellers", url: "https://www.amazon.com/bestsellers", purpose: "Rendimiento de productos y validación de mercado", category: "Investigación de Productos", timeEstimate: "30-45 minutos", instructions: [ "Navega por categorías de productos relevantes", "Toma nota de productos y marcas más vendidos", "Analiza patrones de precios y reseñas", "Verifica características y beneficios de productos", "Identifica brechas de mercado" ], whatToExtract: "Productos principales, datos de precios, preferencias de clientes", icon: "package" },
-            { id: "ebay-trending", name: "eBay Trending", url: "https://www.ebay.com/trending", purpose: "Análisis de tendencias en marketplaces", category: "Investigación de Marketplaces", timeEstimate: "20-30 minutos", instructions: [ "Revisa categorías en tendencia", "Analiza listados vendidos y precios", "Toma nota de estrategias de subasta exitosas", "Verifica variaciones en mercados internacionales", "Identifica categorías de productos emergentes" ], whatToExtract: "Tendencias de mercado, datos de precios, variaciones globales", icon: "gavel" },
-            { id: "etsy-trending", name: "Etsy Trending", url: "https://www.etsy.com/trending", purpose: "Tendencias del mercado artesanal y creativo", category: "Investigación de Nichos de Mercado", timeEstimate: "25-35 minutos", instructions: [ "Navega por búsquedas y productos en tendencia", "Analiza estrategias de tiendas exitosas", "Revisa precios de artículos hechos a mano", "Toma nota de tendencias estacionales y de regalos", "Identifica oportunidades de artesanía y DIY" ], whatToExtract: "Tendencias de nicho, oportunidades creativas, estrategias de precios", icon: "heart" },
-            { id: "chatpdf", name: "ChatPDF", url: "https://chatpdf.com", purpose: "Análisis e investigación de documentos", category: "Investigación de Documentos", timeEstimate: "15-25 minutos por documento", instructions: [ "Sube informes o estudios relevantes de la industria", "Haz preguntas específicas sobre datos de mercado", "Extrae estadísticas y perspectivas clave", "Resume hallazgos importantes", "Cruza referencias con otras fuentes" ], whatToExtract: "Datos de la industria, estadísticas de mercado, perspectivas de investigación", icon: "file-text" },
-            { id: "humata", name: "Humata.ai", url: "https://humata.ai", purpose: "Chat y análisis de documentos impulsado por IA", category: "Inteligencia de Documentos", timeEstimate: "20-30 minutos por documento", instructions: [ "Sube documentos de investigación de mercado", "Haz preguntas específicas sobre los hallazgos", "Solicita resúmenes y perspectivas clave", "Compara múltiples documentos", "Exporta puntos de datos importantes" ], whatToExtract: "Perspectivas de documentos, análisis comparativo, hallazgos clave", icon: "brain" },
-            { id: "aithor", name: "AIThor.com", url: "https://aithor.com", purpose: "Análisis profundo y generación de contenido", category: "Análisis Avanzado", timeEstimate: "30-45 minutos", instructions: [ "Ingresa tus preguntas o datos de investigación", "Solicita un análisis exhaustivo", "Genera informes detallados", "Verifica los hallazgos con fuentes adicionales", "Integra las perspectivas en el plan de negocio" ], whatToExtract: "Perspectivas profundas, informes analíticos, recomendaciones estratégicas", icon: "cpu" }
+            { id: "startup-ai", name: "Startup.ai", url: "https://startup.ai", purpose: "Generación y evaluación de ideas de startups", category: "Validación de Ideas", timeEstimate: "30-45 minutos", instructions: [ "Visite startup.ai", "Explore ideas de startups evaluadas por categoría", "Filtre por sectores de comercio electrónico/minorista", "Anote modelos de negocio en tendencia", "Identifique brechas en las ofertas actuales del mercado" ], whatToExtract: "Conceptos de negocio validados, brechas de mercado, sectores en tendencia", icon: "lightbulb" },
+            { id: "validea", name: "Validea.co", url: "https://validea.co", purpose: "Validación de ideas de negocio impulsada por IA", category: "Validación de Ideas", timeEstimate: "20-30 minutos", instructions: [ "Ingrese el concepto de su idea de negocio", "Responda preguntas de validación sobre el mercado objetivo", "Revise los comentarios y puntuaciones generados por IA", "Anote las mejoras y riesgos sugeridos", "Guarde el informe de validación como referencia" ], whatToExtract: "Puntuaciones de validación, evaluación de riesgos, sugerencias de mejora", icon: "check-circle" },
+            { id: "scira-ai", name: "Scira.ai", url: "https://scira.ai", purpose: "Motor de búsqueda para investigación impulsado por IA", category: "Investigación de Mercado", timeEstimate: "15-20 minutos por búsqueda", instructions: [ "Busque términos específicos de la industria", "Use filtros avanzados para rango de fechas y tipo de fuente", "Recopile datos y tendencias relevantes del mercado", "Guarde los hallazgos importantes con sus fuentes" ], whatToExtract: "Perspectivas de la industria, datos de mercado, información de tendencias", icon: "search" },
+            { id: "perplexity", name: "Perplexity.ai", url: "https://perplexity.ai", purpose: "Investigación en Internet con asistencia de IA", category: "Investigación Integral", timeEstimate: "20-30 minutos por tema", instructions: [ "Haga preguntas específicas sobre su mercado/nicho", "Solicite fuentes y citas", "Continúe con preguntas relacionadas", "Exporte los hallazgos de la investigación", "Verifique la información con fuentes adicionales" ], whatToExtract: "Análisis detallado del mercado, información de la competencia, tendencias de la industria", icon: "brain" },
+            { id: "particl-trends", name: "Particl Trends", url: "https://pitch.com/v/2025-particls-year-to-date-insights-dbckd6/b43ea207-c75e-4423-b07b-101e0e669c2a/", purpose: "Perspectivas y tendencias del mercado acumuladas del año", category: "Análisis de Tendencias", timeEstimate: "25-35 minutos", instructions: [ "Acceda a la presentación de perspectivas de Particl", "Revise tendencias específicas por categoría", "Anote patrones estacionales y mercados emergentes", "Identifique oportunidades de crecimiento", "Compare con la alineación de su idea de negocio" ], whatToExtract: "Tendencias de mercado, categorías en crecimiento, perspectivas estacionales", icon: "trending-up" },
+            { id: "answer-the-public", name: "AnswerThePublic", url: "https://answerthepublic.com", purpose: "Investigación de temas y palabras clave", category: "Investigación de Contenido y SEO", timeEstimate: "20-30 minutos", instructions: [ "Ingrese su palabra clave/nicho principal", "Seleccione su país/idioma objetivo", "Revise las preguntas 'Qué', 'Cómo', 'Por qué'", "Anote las consultas de búsqueda de alto volumen", "Exporte datos para la planificación de contenido" ], whatToExtract: "Preguntas de clientes, ideas de contenido, volúmenes de búsqueda", icon: "help-circle" },
+            { id: "semrush", name: "Semrush", url: "https://semrush.com", purpose: "Análisis SEO y de la competencia", category: "Inteligencia Competitiva", timeEstimate: "30-45 minutos", instructions: [ "Ingrese dominios de la competencia", "Analice sus principales palabras clave", "Revise sus estrategias publicitarias", "Verifique los perfiles de backlinks", "Identifique brechas de contenido" ], whatToExtract: "Palabras clave de la competencia, estrategias publicitarias, posicionamiento en el mercado", icon: "bar-chart" },
+            { id: "glimpse", name: "Glimpse", url: "https://meetglimpse.com/trends", purpose: "Análisis y predicciones de Google Trends", category: "Pronóstico de Tendencias", timeEstimate: "25-35 minutos", instructions: [ "Busque categorías de productos relevantes", "Revise gráficos de tendencias y predicciones", "Analice patrones estacionales", "Anote tendencias emergentes vs decrecientes", "Exporte datos de tendencias" ], whatToExtract: "Predicciones de tendencias, patrones estacionales, sincronización con el mercado", icon: "activity" },
+            { id: "answer-socrates", name: "AnswerSocrates", url: "https://answersocrates.com", purpose: "Investigación de palabras clave basada en preguntas", category: "Investigación de Mercado", timeEstimate: "20-25 minutos", instructions: [ "Ingrese su palabra clave principal", "Revise las categorías de preguntas", "Analice los datos de volumen de búsqueda", "Identifique puntos débiles y necesidades", "Guarde preguntas relevantes para la estrategia de contenido" ], whatToExtract: "Puntos débiles de los clientes, oportunidades de contenido, necesidades del mercado", icon: "message-circle" },
+            { id: "particl", name: "Particl.com", url: "https://particl.com", purpose: "Inteligencia de mercado para comercio electrónico", category: "Analítica de E-commerce", timeEstimate: "30-40 minutos", instructions: [ "Busque categorías de productos en su nicho", "Revise el tamaño del mercado y los datos de crecimiento", "Analice métricas de rendimiento de marca", "Anote tendencias y estrategias de precios", "Identifique oportunidades de mercado" ], whatToExtract: "Tamaño del mercado, rendimiento de marca, estrategias de precios", icon: "shopping-cart" },
+            { id: "similarweb", name: "SimilarWeb", url: "https://similarweb.com", purpose: "Análisis de tráfico web y de la competencia", category: "Inteligencia Competitiva", timeEstimate: "25-35 minutos por competidor", instructions: [ "Ingrese las URL de los sitios web de la competencia", "Analice las fuentes y el volumen de tráfico", "Revise la demografía de la audiencia", "Verifique las fuentes de referencia y asociaciones", "Anote los canales y estrategias de marketing" ], whatToExtract: "Datos de tráfico, perspectivas de la audiencia, canales de marketing", icon: "globe" },
+            { id: "facebook-insights", name: "Facebook Audience Insights", url: "https://www.facebook.com/business/insights/audience", purpose: "Investigación de audiencias en redes sociales", category: "Análisis de Audiencia", timeEstimate: "30-40 minutos", instructions: [ "Defina los criterios de su audiencia objetivo", "Analice la demografía y los intereses", "Revise los 'Me gusta' de páginas y comportamientos", "Anote las concentraciones geográficas", "Identifique segmentos de audiencia" ], whatToExtract: "Demografía, intereses, patrones de comportamiento", icon: "users" },
+            { id: "instagram-shopping", name: "Instagram Shopping", url: "https://business.instagram.com/shopping", purpose: "Análisis de tendencias en comercio social", category: "Investigación de Comercio Social", timeEstimate: "20-30 minutos", instructions: [ "Explore categorías de productos relevantes", "Anote productos y marcas en tendencia", "Analice estrategias de precios", "Revise los niveles de interacción", "Identifique colaboraciones con influencers" ], whatToExtract: "Tendencias de productos, puntos de referencia de precios, tasas de interacción", icon: "instagram" },
+            { id: "pinterest-trends", name: "Pinterest Trends", url: "https://trends.pinterest.com", purpose: "Análisis de tendencias de contenido visual y productos", category: "Investigación de Tendencias Visuales", timeEstimate: "20-30 minutos", instructions: [ "Busque categorías relevantes", "Revise pines y tableros en tendencia", "Analice patrones de contenido estacional", "Anote tendencias de estilo visual", "Identifique oportunidades de contenido" ], whatToExtract: "Tendencias visuales, patrones estacionales, ideas de contenido", icon: "image" },
+            { id: "amazon-bestsellers", name: "Amazon Best Sellers", url: "https://www.amazon.com/bestsellers", purpose: "Rendimiento de productos y validación de mercado", category: "Investigación de Productos", timeEstimate: "30-45 minutos", instructions: [ "Explore categorías de productos relevantes", "Anote productos y marcas más vendidos", "Analice patrones de precios y reseñas", "Verifique características y beneficios de productos", "Identifique brechas de mercado" ], whatToExtract: "Productos principales, datos de precios, preferencias de clientes", icon: "package" },
+            { id: "ebay-trending", name: "eBay Trending", url: "https://www.ebay.com/trending", purpose: "Análisis de tendencias en marketplaces", category: "Investigación de Marketplaces", timeEstimate: "20-30 minutos", instructions: [ "Revise categorías en tendencia", "Analice listados vendidos y precios", "Anote estrategias de subasta exitosas", "Verifique variaciones en mercados internacionales", "Identifique categorías de productos emergentes" ], whatToExtract: "Tendencias de mercado, datos de precios, variaciones globales", icon: "gavel" },
+            { id: "etsy-trending", name: "Etsy Trending", url: "https://www.etsy.com/trending", purpose: "Tendencias del mercado artesanal y creativo", category: "Investigación de Nichos de Mercado", timeEstimate: "25-35 minutos", instructions: [ "Explore búsquedas y productos en tendencia", "Analice estrategias de tiendas exitosas", "Revise precios de artículos hechos a mano", "Anote tendencias estacionales y de regalos", "Identifique oportunidades de artesanía y DIY" ], whatToExtract: "Tendencias de nicho, oportunidades creativas, estrategias de precios", icon: "heart" },
+            { id: "chatpdf", name: "ChatPDF", url: "https://chatpdf.com", purpose: "Análisis e investigación de documentos", category: "Investigación de Documentos", timeEstimate: "15-25 minutos por documento", instructions: [ "Cargue informes o estudios relevantes de la industria", "Haga preguntas específicas sobre datos de mercado", "Extraiga estadísticas y perspectivas clave", "Resuma hallazgos importantes", "Cruce referencias con otras fuentes" ], whatToExtract: "Datos de la industria, estadísticas de mercado, perspectivas de investigación", icon: "file-text" },
+            { id: "humata", name: "Humata.ai", url: "https://humata.ai", purpose: "Chat y análisis de documentos impulsado por IA", category: "Inteligencia de Documentos", timeEstimate: "20-30 minutos por documento", instructions: [ "Cargue documentos de investigación de mercado", "Haga preguntas específicas sobre los hallazgos", "Solicite resúmenes y perspectivas clave", "Compare múltiples documentos", "Exporte puntos de datos importantes" ], whatToExtract: "Perspectivas de documentos, análisis comparativo, hallazgos clave", icon: "brain" },
+            { id: "aithor", name: "AIThor.com", url: "https://aithor.com", purpose: "Análisis profundo y generación de contenido", category: "Análisis Avanzado", timeEstimate: "30-45 minutos", instructions: [ "Ingrese sus preguntas o datos de investigación", "Solicite un análisis completo", "Genere informes detallados", "Verifique los hallazgos con fuentes adicionales", "Integre las perspectivas en el plan de negocio" ], whatToExtract: "Perspectivas profundas, informes analíticos, recomendaciones estratégicas", icon: "cpu" }
         ];
         
         /** @type { {id: number, title: string, description: string, tools: string[]}[] } */
         const researchPhases = [
-            { id: 1, title: "Investigación de Mercado", description: "Comprendiendo el panorama de tu mercado y oportunidades", tools: ["startup-ai", "validea", "scira-ai", "perplexity"] },
-            { id: 2, title: "Identificación de Tendencias y Nichos", description: "Descubriendo oportunidades en tendencia y brechas de mercado", tools: ["particl-trends", "glimpse", "pinterest-trends", "answer-the-public"] },
-            { id: 3, title: "Inteligencia Competitiva", description: "Analizando competidores y posicionamiento en el mercado", tools: ["semrush", "similarweb", "facebook-insights", "instagram-shopping"] },
-            { id: 4, title: "Validación de Producto y Mercado", description: "Validando la demanda del producto y estrategias de precios", tools: ["amazon-bestsellers", "ebay-trending", "etsy-trending", "particl"] },
+            { id: 1, title: "Investigación de Mercado", description: "Comprender el panorama y las oportunidades de su mercado", tools: ["startup-ai", "validea", "scira-ai", "perplexity"] },
+            { id: 2, title: "ID de Tendencias y Nichos", description: "Descubrir oportunidades de tendencia y brechas de mercado", tools: ["particl-trends", "glimpse", "pinterest-trends", "answer-the-public"] },
+            { id: 3, title: "Inteligencia Competitiva", description: "Analizar competidores y posicionamiento en el mercado", tools: ["semrush", "similarweb", "facebook-insights", "instagram-shopping"] },
+            { id: 4, title: "Validación de Productos y Mercado", description: "Validar la demanda de productos y estrategias de precios", tools: ["amazon-bestsellers", "ebay-trending", "etsy-trending", "particl"] },
             { id: 5, title: "Análisis Avanzado", description: "Investigación profunda y análisis de documentos", tools: ["chatpdf", "humata", "aithor", "answer-socrates"] }
         ];
 
         const notionTemplateContent = `# 🚀 Plantilla de Investigación Profunda de E-commerce para Emprendedores
 
-## Visión General del Proyecto
-- **Nombre del Proyecto:** [Nombre de tu idea de negocio/proyecto]
-- **Resumen del Concepto:** [Breve descripción de tu idea de negocio de e-commerce]
-- **Objetivos de la Investigación:** [¿Qué esperas aprender o validar?]
-- **Fecha de Inicio:** [Fecha]
-- **Fecha de Finalización Estimada:** [Fecha]
-
-## Fase 1: Investigación de Mercado (1-2 Semanas)
-### 1.1 Definición del Mercado
-- **Mercado Objetivo Primario:** [Descripción detallada]
-- **Mercado Objetivo Secundario:** [Descripción detallada]
-- **Perfiles de Cliente (Personas):**
-    - **Persona 1:** [Nombre, demografía, psicografía, puntos débiles, objetivos]
-    - **Persona 2:** [Nombre, demografía, psicografía, puntos débiles, objetivos]
-- **Herramientas Utilizadas:** Startup.ai, Validea.co
-
-### 1.2 Tamaño y Potencial del Mercado
-- **Tamaño Actual del Mercado (TAM, SAM, SOM):** [Datos y fuentes]
-- **Tasa de Crecimiento del Mercado:** [Datos y fuentes]
-- **Proyecciones Futuras:** [Datos y fuentes]
-- **Herramientas Utilizadas:** Scira.ai, Perplexity.ai
-
-### 1.3 Tendencias y Dinámicas del Mercado
-- **Tendencias Clave Actuales:** [Listar y describir]
-- **Impulsores del Mercado:** [Factores que influyen en el crecimiento]
-- **Restricciones del Mercado:** [Factores que limitan el crecimiento]
-- **Análisis FODA (Fortalezas, Oportunidades, Debilidades, Amenazas) del Mercado:**
-    - **Fortalezas:**
-    - **Debilidades:**
-    - **Oportunidades:**
-    - **Amenazas:**
-- **Herramientas Utilizadas:** Scira.ai, Perplexity.ai, Particl Trends
-
-## Fase 2: Identificación de Tendencias y Nichos (1-2 Semanas)
-### 2.1 Identificación de Tendencias Emergentes
-- **Tendencias de Productos/Servicios:** [Listar y describir]
-- **Tendencias de Comportamiento del Consumidor:** [Listar y describir]
-- **Tendencias Tecnológicas Relevantes:** [Listar y describir]
-- **Herramientas Utilizadas:** Particl Trends, Glimpse, Pinterest Trends
-
-### 2.2 Descubrimiento de Nichos
-- **Posibles Nichos de Mercado:** [Listar ideas de nicho]
-- **Análisis de Rentabilidad del Nicho:** [Evaluación de cada nicho]
-- **Análisis de Competencia del Nicho:** [Evaluación de cada nicho]
-- **Nicho(s) Seleccionado(s):** [Justificación]
-- **Herramientas Utilizadas:** AnswerThePublic, Google Trends (via Glimpse)
-
-### 2.3 Validación de Demanda del Nicho
-- **Volumen de Búsqueda de Palabras Clave:** [Datos y palabras clave principales]
-- **Análisis de Buzz en Redes Sociales:** [Hallazgos y plataformas]
-- **Encuestas/Sondeos Iniciales (si aplica):** [Resultados]
-- **Herramientas Utilizadas:** AnswerThePublic, Semrush (para volumen de palabras clave)
-
-## Fase 3: Análisis Competitivo (1-2 Semanas)
-### 3.1 Identificación de Competidores
-- **Competidores Directos:** [Lista con URLs]
-- **Competidores Indirectos:** [Lista con URLs]
-- **Competidores Emergentes:** [Lista con URLs]
-- **Herramientas Utilizadas:** Semrush, SimilarWeb, Google Search
-
-### 3.2 Perfil del Competidor
-*(Repetir para cada competidor clave)*
-- **Nombre del Competidor:**
-- **Visión General:**
-- **Productos/Servicios Ofrecidos:**
-- **Fortalezas:**
-- **Debilidades:**
-- **Estrategia de Precios:**
-- **Posicionamiento en el Mercado:**
-- **Público Objetivo:**
-- **Canales de Marketing Clave:**
-- **Tráfico Web Estimado y Fuentes:** [Datos de SimilarWeb]
-- **Presencia en Redes Sociales:** [Plataformas, seguidores, engagement]
-- **Reseñas y Sentimiento del Cliente:**
-- **Herramientas Utilizadas:** Semrush, SimilarWeb, Facebook Audience Insights (para análisis de audiencia de competidores si es posible), Instagram Shopping (para ver su presencia)
-
-### 3.3 Mapeo Competitivo
-- **Matriz de Características:** [Tabla comparando características clave]
-- **Mapa de Posicionamiento:** [Gráfico 2x2 basado en atributos clave, ej. precio vs. calidad]
-- **Análisis de Brechas:** [Oportunidades no cubiertas por los competidores]
-
-## Fase 4: Validación de Producto y Mercado (1-2 Semanas)
-### 4.1 Definición de la Propuesta de Valor Única (PVU)
-- **PVU Borrador:** [Tu propuesta de valor]
-- **Cómo se Diferencia:** [Comparación con competidores]
-
-### 4.2 Validación de Producto-Mercado Fit
-- **Encuestas de Interés del Producto:** [Diseño y resultados]
-- **Entrevistas con Clientes Potenciales:** [Hallazgos clave]
-- **Pruebas de Concepto (si aplica):** [Metodología y resultados]
-- **Herramientas Utilizadas:** Formularios de encuestas (Google Forms, Typeform), Particl.com (para benchmarks)
-
-### 4.3 Estrategia de Precios y Pruebas
-- **Análisis de Precios de Competidores:** [Resumen]
-- **Modelos de Precios Potenciales:** [Listar opciones]
-- **Pruebas de Sensibilidad al Precio (ej. Encuesta Van Westendorp):** [Resultados]
-- **Estrategia de Precios Seleccionada:** [Justificación]
-- **Herramientas Utilizadas:** Amazon Best Sellers, eBay Trending, Etsy Trending (para benchmarks de precios en marketplaces)
-
-### 4.4 Recopilación de Retroalimentación Temprana
-- **Canales de Retroalimentación:** [Ej. Grupos focales, comunidades online]
-- **Resumen de la Retroalimentación:** [Positiva, negativa, sugerencias]
-- **Iteraciones del Producto/Concepto Basadas en la Retroalimentación:**
-
-## Fase 5: Análisis Avanzado y Estrategia (1 Semana)
-### 5.1 Consolidación de Hallazgos
-- **Resumen de Hallazgos Clave por Fase:**
-- **Principales Perspectivas Accionables:**
-- **Herramientas Utilizadas:** ChatPDF, Humata.ai (para analizar informes y documentos recopilados)
-
-### 5.2 Evaluación de Riesgos y Plan de Mitigación
-- **Riesgos Identificados:** [Listar]
-- **Probabilidad e Impacto:** [Para cada riesgo]
-- **Estrategias de Mitigación:** [Para cada riesgo]
-
-### 5.3 Desarrollo de Estrategia de Salida al Mercado (Go-To-Market)
-- **Canales de Marketing y Ventas Seleccionados:** [Justificación]
-- **Mensajería y Posicionamiento Clave:**
-- **Estrategia de Lanzamiento Inicial:**
-- **KPIs para el Lanzamiento y Post-Lanzamiento:**
-- **Herramientas Utilizadas:** AIThor.com (para análisis profundo y generación de ideas estratégicas), AnswerSocrates (para refinar mensajes basados en preguntas de clientes)
-
-### 5.4 Documentación Final y Próximos Pasos
-- **Informe Final de Investigación de Mercado:** [Enlace o adjunto]
-- **Presentación Resumen:** [Enlace o adjunto]
-- **Próximos Pasos Accionables:** [Lista de tareas]
-
-## Apéndice
-- **Fuentes de Datos:** [Lista de todos los informes, artículos, sitios web consultados]
-- **Transcripciones de Entrevistas/Encuestas:** [Si aplica]
-- **Resultados Detallados de Herramientas:** [Capturas de pantalla o exportaciones importantes]
+*Su guía completa para construir un negocio en línea sostenible a través de la investigación y el análisis estratégico*
 
 ---
-*Esta plantilla está diseñada para ser completa. Ajusta las secciones y la profundidad según las necesidades específicas de tu proyecto y los recursos disponibles.*
-`; 
+
+## 🎯 Visión General y Navegación
+
+¡Bienvenido a su centro de investigación todo en uno! Esta plantilla está diseñada para guiarlo a través de cada paso para validar y lanzar su emprendimiento de comercio electrónico. Ya sea que venda productos, servicios o alimentos, este enfoque sistemático lo ayudará a tomar decisiones informadas.
+
+### 📋 Navegación Rápida
+- Investigación de Mercado
+- Identificación de Tendencias y Nichos  
+- Análisis para la Toma de Decisiones
+- Lista de Verificación Integral
+- Directorio de Herramientas de Investigación
+
+---
+
+## 🔍 Investigación de Mercado
+
+### 📊 Marco de Investigación
+
+#### Paso 1: Investigación General de la Industria
+**Tiempo Requerido: 2-3 horas**
+
+**Objetivo**: Comprender el panorama de su mercado, tamaño y potencial de crecimiento.
+
+**Lista de Verificación de Investigación:**
+- [ ] Tamaño de la industria y tasa de crecimiento
+- [ ] Segmentos clave del mercado
+- [ ] Entorno regulatorio
+- [ ] Patrones estacionales
+- [ ] Consideraciones geográficas
+
+#### Paso 2: Definición del Mercado Objetivo
+
+**Tabla de Investigación Demográfica:**
+
+| Factor Demográfico     | Datos Recopilados | Fuente  | Fecha de Actualización |
+|------------------------|-------------------|---------|----------------------|
+| Rango de Edad          |                   |         |                      |
+| Distribución de Género |                   |         |                      |
+| Nivel de Ingresos      |                   |         |                      |
+| Ubicación Geográfica   |                   |         |                      |
+| Nivel Educativo        |                   |         |                      |
+| Preferencias de Estilo de Vida |             |         |                      |
+| Comportamientos de Compra |                |         |                      |
+
+**Análisis Psicográfico:**
+
+| Factor                 | Descripción | Impacto en el Negocio |
+|------------------------|-------------|-----------------------|
+| Valores                |             |                       |
+| Intereses              |             |                       |
+| Puntos de Dolor        |             |                       |
+| Motivaciones de Compra |             |                       |
+| Preferencias de Comunicación |         |                       |
+
+#### Paso 3: Análisis del Panorama Competitivo
+
+**Matriz de Análisis de Competidores:**
+
+| Nombre del Competidor | Cuota de Mercado | Rango de Precios | Fortalezas | Debilidades | Propuesta Única de Valor | Canales de Marketing |
+|-----------------------|------------------|-----------------|------------|-------------|--------------------------|----------------------|
+|                       |                  |                 |            |             |                          |                      |
+|                       |                  |                 |            |             |                          |                      |
+|                       |                  |                 |            |             |                          |                      |
+
+**Notas de Inteligencia Competitiva:**
+- **Competidores Directos**: Empresas que ofrecen productos/servicios idénticos
+- **Competidores Indirectos**: Soluciones alternativas al mismo problema
+- **Productos Sustitutos**: Diferentes enfoques para satisfacer las necesidades del cliente
+
+#### Paso 4: Investigación del Panorama de Marcas
+
+**Mapa de Posicionamiento de Marca:**
+
+| Marca     | Nivel de Precio | Nivel de Calidad | Público Objetivo | Personalidad de Marca | Posición en el Mercado |
+|-----------|-----------------|------------------|------------------|-----------------------|------------------------|
+|           |                 |                  |                  |                       |                        |
+|           |                 |                  |                  |                       |                        |
+|           |                 |                  |                  |                       |                        |
+
+#### Paso 5: Análisis de Márgenes de Beneficio
+
+**Investigación de Beneficios por Categoría de Producto:**
+
+| Categoría de Producto | Margen de Beneficio Promedio | Rango de Precios | Potencial de Volumen | Nivel de Dificultad |
+|-----------------------|------------------------------|-----------------|--------------------|---------------------|
+|                       |                              |                 |                    |                     |
+|                       |                              |                 |                    |                     |
+|                       |                              |                 |                    |                     |
+
+---
+
+## 📈 Identificación de Tendencias y Nichos
+
+### 🔮 Marco para Detectar Tendencias
+
+#### Análisis de Tendencias del Año Actual
+
+**Seguimiento de Tendencias Emergentes:**
+
+| Nombre de la Tendencia | Puntuación de Relevancia (1-10) | Datos de Respaldo | Potencial de Crecimiento | Dificultad de Implementación | Cronograma |
+|------------------------|---------------------------------|-------------------|--------------------------|-----------------------------|------------|
+| Innovaciones Impulsadas por IA |                                 |                   |                          |                             |            |
+| Cambios en Sostenibilidad |                                 |                   |                          |                             |            |
+| Comercio Social        |                                 |                   |                          |                             |            |
+| Personalización        |                                 |                   |                          |                             |            |
+| Salud y Bienestar      |                                 |                   |                          |                             |            |
+
+#### Flujo de Trabajo para Identificación de Nichos
+
+**Paso 1: Investigación de Nichos de Alta Demanda**
+**Tiempo Requerido: 3-4 horas**
+
+**Criterios de Evaluación de Nichos:**
+
+| Opción de Nicho | Tamaño del Mercado | Nivel de Competencia | Barreras de Entrada | Potencial de Beneficio | Interés Personal | Puntuación Final |
+|-----------------|--------------------|----------------------|---------------------|------------------------|------------------|-----------------|
+|                 |                    |                      |                     |                        |                  |                 |
+|                 |                    |                      |                     |                        |                  |                 |
+|                 |                    |                      |                     |                        |                  |                 |
+
+**Paso 2: Proceso de Validación de Nichos**
+
+**Lista de Verificación de Validación:**
+- [ ] Análisis de volumen de búsqueda completado
+- [ ] Densidad de competencia evaluada
+- [ ] Puntos de dolor del cliente identificados
+- [ ] Potencial de monetización confirmado
+- [ ] Trayectoria de crecimiento del mercado analizada
+- [ ] Barreras de entrada evaluadas
+
+**Paso 3: Análisis de Intersección Tendencia-Nicho**
+
+**Matriz de Oportunidades:**
+
+| Tendencia | Aplicación en Nicho | Momento del Mercado | Requisitos de Recursos | Probabilidad de Éxito |
+|-----------|---------------------|--------------------|------------------------|-----------------------|
+|           |                     |                    |                        |                       |
+|           |                     |                    |                        |                       |
+|           |                     |                    |                        |                       |
+
+---
+
+## 💰 Análisis para la Toma de Decisiones
+
+### 💵 Marco de Planificación Financiera
+
+#### Análisis de Estructura de Costos
+
+**Calculadora de Costos Fijos:**
+
+| Categoría de Costo      | Monto Mensual | Monto Anual | Notas |
+|-------------------------|---------------|-------------|-------|
+| Registro de Negocio     |               |             |       |
+| Tarifas de Sitio Web/Plataforma |         |             |       |
+| Suscripciones de Software |             |             |       |
+| Seguro                  |               |             |       |
+| Legal/Contable          |               |             |       |
+| Herramientas de Marketing |             |             |       |
+| **Costos Fijos Totales**|               |             |       |
+
+**Calculadora de Costos Variables:**
+
+| Categoría de Costo       | Costo por Unidad | Estimación de Volumen | Costo Total | Porcentaje de Ingresos |
+|--------------------------|------------------|-----------------------|-------------|------------------------|
+| Costo de Producto/Servicio |                |                       |             |                        |
+| Envío/Entrega            |                |                       |             |                        |
+| Procesamiento de Pagos   |                |                       |             |                        |
+| Servicio al Cliente      |                |                       |             |                        |
+| Marketing/Publicidad     |                |                       |             |                        |
+| **Costos Variables Totales**|               |                       |             |                        |
+
+#### Análisis de Sostenibilidad del Estilo de Vida
+
+**Requisitos Financieros Personales:**
+
+| Categoría de Gasto   | Necesidad Mensual | Necesidad Anual | Nivel de Prioridad |
+|----------------------|-------------------|-----------------|--------------------|
+| Vivienda             |                   |                 |                    |
+| Alimentación         |                   |                 |                    |
+| Transporte           |                   |                 |                    |
+| Atención Médica      |                   |                 |                    |
+| Personal/Familiar    |                   |                 |                    |
+| Fondo de Emergencia  |                   |                 |                    |
+| **Costo Total de Estilo de Vida** |     |                 |                    |
+
+#### Alineación Pasión-Beneficio
+
+**Marco de Monetización de la Pasión:**
+
+| Interés/Habilidad | Demanda del Mercado | Potencial de Monetización | Curva de Aprendizaje | Inversión de Tiempo |
+|-------------------|---------------------|---------------------------|----------------------|---------------------|
+|                   |                     |                           |                      |                     |
+|                   |                     |                           |                      |                     |
+|                   |                     |                           |                      |                     |
+
+#### Matriz de Evaluación de Riesgos
+
+**Evaluación de Riesgos del Negocio:**
+
+| Factor de Riesgo       | Probabilidad (1-10) | Impacto (1-10) | Puntuación de Riesgo | Estrategia de Mitigación |
+|------------------------|---------------------|----------------|----------------------|--------------------------|
+| Saturación del mercado |                     |                |                      |                          |
+| Recesión económica     |                     |                |                      |                          |
+| Problemas en cadena de suministro |           |                |                      |                          |
+| Cambios tecnológicos   |                     |                |                      |                          |
+| Cambios regulatorios   |                     |                |                      |                          |
+
+#### Análisis de Estrategia de Precios
+
+**Comparación de Modelos de Precios:**
+
+| Modelo de Precios | Descripción | Pros | Contras | Ideal Para |
+|-------------------|-------------|------|---------|------------|
+| Costo-Más         |             |      |         |            |
+| Basado en Valor   |             |      |         |            |
+| Competitivo       |             |      |         |            |
+| Dinámico          |             |      |         |            |
+| Freemium          |             |      |         |            |
+
+#### Preguntas Clave para la Decisión
+
+**Marco de Decisión Estratégica:**
+
+1.  **Momento del Mercado**: ¿Es este el momento adecuado para entrar en este mercado?
+    -   Respuesta: ________________
+    -   Evidencia de Respaldo: ________________
+
+2.  **Asignación de Recursos**: ¿Tengo suficientes recursos (tiempo, dinero, habilidades)?
+    -   Respuesta: ________________
+    -   Análisis de Brechas: ________________
+
+3.  **Ventaja Competitiva**: ¿Qué valor único puedo ofrecer?
+    -   Respuesta: ________________
+    -   Estrategia de Diferenciación: ________________
+
+4.  **Escalabilidad**: ¿Puede este modelo de negocio escalar eficazmente?
+    -   Respuesta: ________________
+    -   Plan de Escalamiento: ________________
+
+5.  **Estrategia de Salida**: ¿Cuáles son mis objetivos a largo plazo para este negocio?
+    -   Respuesta: ________________
+    -   Cronograma: ________________
+
+---
+
+## ✅ Lista de Verificación Integral
+
+### Fase 1: Fase de Preparación 🎯
+**Tiempo Estimado: 1-2 semanas**
+
+#### Fundación del Negocio
+- [ ] **Definir Idea de Negocio** (2-3 horas)
+  - [ ] Escribir descripción del negocio en una oración
+  - [ ] Identificar propuesta de valor central
+  - [ ] Definir avatar del cliente objetivo
+  - [ ] Establecer objetivos iniciales del negocio
+
+- [ ] **Reunir Herramientas de Investigación** (3-4 horas)
+  - [ ] Configurar cuentas para plataformas de investigación
+  - [ ] Instalar extensiones de navegador para recolección de datos
+  - [ ] Crear hojas de cálculo para organización de datos
+  - [ ] Configurar sistema de gestión de proyectos
+
+### Fase 2: Fase de Investigación 🔍
+**Tiempo Estimado: 2-3 semanas**
+
+#### Inmersión Profunda en Investigación de Mercado
+- [ ] **Análisis de Tendencias** (8-10 horas)
+  - [ ] Completar análisis de tendencias de Particl
+  - [ ] Investigar tendencias de Pinterest para perspectivas visuales
+  - [ ] Analizar Google Trends mediante Glimpse
+  - [ ] Documentar patrones estacionales
+
+- [ ] **Inteligencia Competitiva** (10-12 horas)
+  - [ ] Identificar los 10 principales competidores directos
+  - [ ] Completar análisis de SimilarWeb para cada uno
+  - [ ] Analizar presencia en redes sociales de competidores
+  - [ ] Documentar estrategias de precios
+  - [ ] Mapear ventajas/desventajas competitivas
+
+- [ ] **Investigación de Clientes** (6-8 horas)
+  - [ ] Realizar investigación con Facebook Audience Insights
+  - [ ] Analizar preguntas de clientes mediante AnswerThePublic
+  - [ ] Revisar reseñas de clientes en Amazon/eBay
+  - [ ] Crear perfiles de persona de cliente
+
+#### Análisis Financiero Preliminar
+- [ ] **Investigación de Costos** (4-5 horas)
+  - [ ] Investigar costos de proveedores y mínimos
+  - [ ] Calcular costos de envío y logística
+  - [ ] Estimar costos de marketing y adquisición
+  - [ ] Documentar todos los gastos fijos y variables
+
+### Fase 3: Fase de Definición de Nicho 🎯
+**Tiempo Estimado: 1-2 semanas**
+
+#### Validación de Mercado
+- [ ] **Identificación de Nicho** (6-8 horas)
+  - [ ] Completar matriz de evaluación de nicho
+  - [ ] Validar demanda usando investigación de palabras clave
+  - [ ] Evaluar densidad de competencia
+  - [ ] Evaluar barreras de entrada
+
+- [ ] **Validación de Demanda** (4-6 horas)
+  - [ ] Probar concepto de producto mínimo viable
+  - [ ] Realizar entrevistas a clientes
+  - [ ] Analizar datos de volumen de búsqueda
+  - [ ] Validar expectativas de precios
+
+### Fase 4: Fase de Análisis 💰
+**Tiempo Estimado: 1 semana**
+
+#### Modelado Financiero
+- [ ] **Análisis Costo-Beneficio** (4-5 horas)
+  - [ ] Completar cálculos detallados de costos
+  - [ ] Proyectar escenarios de ingresos (conservador, realista, optimista)
+  - [ ] Calcular punto de equilibrio
+  - [ ] Evaluar proyecciones de ROI
+
+- [ ] **Estrategia de Precios** (3-4 horas)
+  - [ ] Probar diferentes modelos de precios
+  - [ ] Analizar precios de la competencia
+  - [ ] Calcular puntos de precio óptimos
+  - [ ] Planificar estrategias de precios promocionales
+
+#### Evaluación de Riesgos
+- [ ] **Evaluación de Riesgos del Negocio** (2-3 horas)
+  - [ ] Completar matriz de evaluación de riesgos
+  - [ ] Desarrollar estrategias de mitigación
+  - [ ] Planificar escenarios de contingencia
+  - [ ] Evaluar necesidades de seguro
+
+### Fase 5: Fase de Revisión e Iteración 🔄
+**Tiempo Estimado: 1 semana**
+
+#### Validación Final
+- [ ] **Revisión Integral** (4-5 horas)
+  - [ ] Revisar todos los hallazgos de la investigación
+  - [ ] Probar supuestos clave
+  - [ ] Validar viabilidad del modelo de negocio
+  - [ ] Ajustar estrategia basada en perspectivas
+
+- [ ] **Prueba de Prototipo** (tiempo variable)
+  - [ ] Crear producto mínimo viable
+  - [ ] Probar con clientes objetivo
+  - [ ] Recopilar comentarios e iterar
+  - [ ] Validar supuestos centrales
+
+- [ ] **Finalización del Modelo de Negocio** (2-3 horas)
+  - [ ] Documentar modelo de negocio final
+  - [ ] Crear cronograma de implementación
+  - [ ] Establecer métricas de éxito y KPIs
+  - [ ] Planificar estrategia de lanzamiento
+
+---
+
+## 🛠️ Directorio de Herramientas de Investigación
+
+### Enlaces de Acceso Rápido a Herramientas e Instrucciones
+
+#### Herramientas de Validación de Ideas
+1.  **Startup.ai** - [Visitar Sitio](https://startup.ai)
+    -   *Propósito*: Explorar ideas de startups evaluadas
+    -   *Tiempo*: 30-45 minutos
+    -   *Resultado*: Conceptos de negocio validados
+
+2.  **Validea.co** - [Visitar Sitio](https://validea.co)
+    -   *Propósito*: Validación de ideas impulsada por IA
+    -   *Tiempo*: 20-30 minutos
+    -   *Resultado*: Puntuaciones de validación y retroalimentación
+
+#### Herramientas de Investigación de Mercado
+3.  **Scira.ai** - [Visitar Sitio](https://scira.ai)
+    -   *Propósito*: Motor de búsqueda impulsado por IA
+    -   *Tiempo*: 15-20 minutos por búsqueda
+    -   *Resultado*: Perspectivas y datos de la industria
+
+4.  **Perplexity.ai** - [Visitar Sitio](https://perplexity.ai)
+    -   *Propósito*: Investigación en Internet con IA
+    -   *Tiempo*: 20-30 minutos por tema
+    -   *Resultado*: Informes de investigación completos
+
+#### Herramientas de Análisis de Tendencias
+5.  **Particl Trends** - [Visitar Sitio](https://pitch.com/v/2025-particls-year-to-date-insights-dbckd6/b43ea207-c75e-4423-b07b-101e0e669c2a/)
+    -   *Propósito*: Perspectivas del mercado acumuladas del año
+    -   *Tiempo*: 25-35 minutos
+    -   *Resultado*: Tendencias de mercado y datos de crecimiento
+
+6.  **Glimpse** - [Visitar Sitio](https://meetglimpse.com/trends/)
+    -   *Propósito*: Análisis de Google Trends
+    -   *Tiempo*: 25-35 minutos
+    -   *Resultado*: Predicciones y patrones de tendencias
+
+#### Investigación de Palabras Clave y Contenido
+7.  **AnswerThePublic** - [Visitar Sitio](https://answerthepublic.com)
+    -   *Propósito*: Investigación de temas y palabras clave
+    -   *Tiempo*: 20-30 minutos
+    -   *Resultado*: Preguntas de clientes e ideas de contenido
+
+8.  **AnswerSocrates** - [Visitar Sitio](https://answersocrates.com)
+    -   *Propósito*: Investigación basada en preguntas
+    -   *Tiempo*: 20-25 minutos
+    -   *Resultado*: Puntos de dolor y necesidades del mercado
+
+#### Inteligencia Competitiva
+9.  **Semrush** - [Visitar Sitio](https://semrush.com)
+    -   *Propósito*: Análisis SEO y de competidores
+    -   *Tiempo*: 30-45 minutos
+    -   *Resultado*: Estrategias y palabras clave de competidores
+
+10. **SimilarWeb** - [Visitar Sitio](https://similarweb.com)
+    -   *Propósito*: Análisis de tráfico web
+    -   *Tiempo*: 25-35 minutos por sitio
+    -   *Resultado*: Datos de tráfico y perspectivas de la audiencia
+
+#### Investigación en Redes Sociales
+11. **Facebook Audience Insights** - [Visitar Sitio](https://facebook.com/business/insights/audience)
+    -   *Propósito*: Investigación de audiencias en redes sociales
+    -   *Tiempo*: 30-40 minutos
+    -   *Resultado*: Datos demográficos y de comportamiento
+
+12. **Pinterest Trends** - [Visitar Sitio](https://trends.pinterest.com)
+    -   *Propósito*: Tendencias de contenido visual
+    -   *Tiempo*: 20-30 minutos
+    -   *Resultado*: Tendencias visuales y patrones estacionales
+
+#### Investigación en Plataformas de E-commerce
+13. **Amazon Best Sellers** - [Visitar Sitio](https://amazon.com/bestsellers)
+    -   *Propósito*: Análisis de rendimiento de productos
+    -   *Tiempo*: 30-45 minutos
+    -   *Resultado*: Productos principales y datos de precios
+
+14. **eBay Trending** - [Visitar Sitio](https://ebay.com/trending)
+    -   *Propósito*: Análisis de tendencias en marketplaces
+    -   *Tiempo*: 20-30 minutos
+    -   *Resultado*: Tendencias de mercado y precios
+
+15. **Etsy Trending** - [Visitar Sitio](https://etsy.com/trending)
+    -   *Propósito*: Tendencias del mercado artesanal
+    -   *Tiempo*: 25-35 minutos
+    -   *Resultado*: Tendencias de nicho y oportunidades creativas
+
+#### Herramientas de Análisis de Documentos
+16. **ChatPDF** - [Visitar Sitio](https://chatpdf.com)
+    -   *Propósito*: Análisis de documentos PDF
+    -   *Tiempo*: 15-25 minutos por documento
+    -   *Resultado*: Perspectivas de documentos y extracción de datos
+
+17. **Humata.ai** - [Visitar Sitio](https://humata.ai)
+    -   *Propósito*: Chat de documentos con IA
+    -   *Tiempo*: 20-30 minutos por documento
+    -   *Resultado*: Inteligencia y análisis de documentos
+
+#### Análisis Avanzado
+18. **AIThor** - [Visitar Sitio](https://aithor.com)
+    -   *Propósito*: Análisis profundo y generación de contenido
+    -   *Tiempo*: 30-45 minutos
+    -   *Resultado*: Informes analíticos completos
+
+---
+
+## 📝 Plantilla de Notas de Investigación
+
+### Registro Diario de Investigación
+
+**Fecha**: ________________
+**Área de Enfoque**: ________________
+**Tiempo Dedicado**: ________________
+
+#### Hallazgos Clave:
+- 
+- 
+- 
+
+#### Preguntas Surgidas:
+- 
+- 
+- 
+
+#### Próximos Pasos:
+- 
+- 
+- 
+
+#### Fuentes Revisadas:
+- 
+- 
+- 
+
+---
+
+## 🎯 Panel de Métricas de Éxito
+
+### Seguimiento del Progreso
+
+| Fase de Investigación   | % de Finalización | Perspectivas Clave Obtenidas | Nivel de Confianza | Próximas Acciones |
+|-------------------------|-------------------|------------------------------|--------------------|-------------------|
+| Investigación de Mercado| %                 |                              | /10                |                   |
+| Análisis de Tendencias  | %                 |                              | /10                |                   |
+| Investigación Competitiva| %                |                              | /10                |                   |
+| Análisis Financiero     | %                 |                              | /10                |                   |
+| Validación de Nicho     | %                 |                              | /10                |                   |
+
+### Puntuación de Preparación del Negocio
+
+Calcule su preparación para el lanzamiento (Califique cada uno del 1 al 10):
+
+- [ ] Comprensión del Mercado: ___/10
+- [ ] Análisis Competitivo: ___/10  
+- [ ] Planificación Financiera: ___/10
+- [ ] Definición del Público Objetivo: ___/10
+- [ ] Propuesta Única de Valor: ___/10
+- [ ] Plan de Implementación: ___/10
+
+**Puntuación Total**: ___/60
+
+**Interpretación**:
+- 50-60: Listo para lanzar
+- 40-49: Brechas menores por abordar
+- 30-39: Investigación significativa necesaria
+- Menos de 30: Continuar fase de investigación
+
+---
+
+*Recuerde: Esta plantilla es su hoja de ruta hacia el éxito. Tómese su tiempo con cada sección, sea minucioso en su investigación y no apresure el proceso. Una investigación de calidad conduce a decisiones de negocio de calidad. ¡Usted puede hacerlo! 🚀*`;
 
         /** @type {Set<string>} */
         let completedTools = new Set();
@@ -1040,7 +1393,19 @@
             const preferredTheme = globalWindow.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
             const currentTheme = storedTheme || preferredTheme;
             applyTheme(currentTheme);
+            
+            // Set initial text based on loaded theme
+            const desktopThemeText = document.getElementById('theme-toggle-desktop-text');
+            const mobileThemeText = document.getElementById('theme-toggle-mobile-text');
+            if (htmlEl.classList.contains('dark')) {
+                if (desktopThemeText) desktopThemeText.textContent = 'Cambiar a Claro';
+                if (mobileThemeText) mobileThemeText.textContent = 'Cambiar a Claro';
+            } else {
+                if (desktopThemeText) desktopThemeText.textContent = 'Cambiar a Oscuro';
+                if (mobileThemeText) mobileThemeText.textContent = 'Cambiar a Oscuro';
+            }
         }
+
 
         function toggleTheme() {
             const newTheme = htmlEl.classList.contains('dark') ? 'light' : 'dark';
@@ -1060,10 +1425,7 @@
             
             callLucideCreateIcons();
             showSection('overview');
-            renderToolsDirectory(); // Initial render for tools directory
-             // Set initial view mode for tools directory filters (buttons)
-            setViewMode(currentViewMode);
-
+            renderToolsDirectory(); // Initial render
 
             const themeToggleDesktop = document.getElementById('theme-toggle-desktop');
             const themeToggleMobile = document.getElementById('theme-toggle-mobile');
@@ -1090,12 +1452,29 @@
             } else if (sectionId === 'tools-directory' && toolsDirectorySection) {
                 toolsDirectorySection.classList.remove('hidden');
                 renderToolsDirectory();
-            } else if (researchSection) { // Covers all research phase sections
-                researchSection.classList.remove('hidden');
-                renderResearchSection(sectionId);
+            } else if (researchSection) { // Covers all research phases
+                const phaseMapping = { 
+                    'market-investigation': 1, 
+                    'trend-identification': 2, 
+                    'competitive-analysis': 3, 
+                    'product-validation': 4, 
+                    'advanced-analysis': 5 
+                };
+                // @ts-ignore
+                if (phaseMapping[sectionId]) {
+                    researchSection.classList.remove('hidden');
+                    renderResearchSection(sectionId);
+                } else { // Fallback to overview if sectionId is not a research phase
+                     if(overviewSection) overviewSection.classList.remove('hidden');
+                     updateNavigationActive('overview'); // Ensure overview is marked active
+                }
+            } else {
+                 if(overviewSection) overviewSection.classList.remove('hidden'); // Fallback
+                 updateNavigationActive('overview');
             }
             globalWindow.scrollTo(0,0);
         }
+
 
         /** @param {string} sectionId */
         function updateNavigationActive(sectionId) {
@@ -1106,21 +1485,10 @@
                 item.classList.remove(...commonClassesRemove);
                 item.classList.add(...commonClassesAdd);
             });
-            
-            // Handle specific research phase sections for nav highlighting
-            let navSectionId = sectionId;
-            if (['market-investigation', 'trend-identification', 'competitive-analysis', 'product-validation', 'advanced-analysis'].includes(sectionId)) {
-                // Keep navSectionId as is for these specific phases for highlighting individual nav items
-            } else if (sectionId !== 'overview' && sectionId !== 'tools-directory') {
-                // This case should ideally not happen if sectionId is always one of the defined ones.
-                // Default to overview if something unexpected.
-                navSectionId = 'overview'; 
-            }
-
 
             const navSelectors = [
-                `.nav-item[onclick*="showSection('${navSectionId}')"]`,
-                `.mobile-nav-item[onclick*="showSection('${navSectionId}')"]`
+                `.nav-item[onclick*="showSection('${sectionId}')"]`,
+                `.mobile-nav-item[onclick*="showSection('${sectionId}')"]`
             ];
 
             navSelectors.forEach(selector => {
@@ -1134,16 +1502,10 @@
 
         /** @param {string} sectionId */
         function renderResearchSection(sectionId) {
-            const phaseMapping = { 
-                'market-investigation': 1, 
-                'trend-identification': 2, 
-                'competitive-analysis': 3, 
-                'product-validation': 4, // Corrected mapping
-                'advanced-analysis': 5 
-            };
+            const phaseMapping = { 'market-investigation': 1, 'trend-identification': 2, 'competitive-analysis': 3, 'product-validation': 4, 'advanced-analysis': 5 };
             // @ts-ignore
             const currentPhaseId = phaseMapping[sectionId];
-            if (!currentPhaseId) return; // Should not happen if sectionId is valid
+            if (!currentPhaseId) return;
             renderProgressChecklist();
             renderResearchAccordion(currentPhaseId);
         }
@@ -1151,12 +1513,11 @@
         function renderProgressChecklist() {
             const container = document.getElementById('progress-checklist');
             if (!container) return;
-            container.innerHTML = ''; // Clear previous content
+            container.innerHTML = '';
             researchPhases.forEach(phase => {
-                const phaseTools = phase.tools.map(toolId => researchTools.find(t => t.id === toolId)).filter(Boolean); // Filter out undefined if toolId not found
-                const completedCount = phaseTools.filter(tool => tool && completedTools.has(tool.id)).length;
+                const phaseTools = phase.tools.map(toolId => researchTools.find(t => t.id === toolId)).filter(Boolean);
+                const completedCount = phaseTools.filter(tool => completedTools.has(tool.id)).length;
                 const progressPercent = phaseTools.length > 0 ? Math.round((completedCount / phaseTools.length) * 100) : 0;
-                
                 const phaseElement = document.createElement('div');
                 phaseElement.className = 'border border-gray-200 dark:border-slate-700 rounded-lg p-4';
                 phaseElement.innerHTML = `
@@ -1168,7 +1529,7 @@
                         <div class="progress-bar bg-pink-600 h-2 rounded-full" style="width: ${progressPercent}%"></div>
                     </div>
                     <div class="space-y-2">
-                        ${phaseTools.map(tool => tool ? ` <!-- Check if tool exists -->
+                        ${phaseTools.map(tool => tool ? `
                             <label class="flex items-center text-xs cursor-pointer">
                                 <input type="checkbox" ${completedTools.has(tool.id) ? 'checked' : ''} onchange="toggleToolComplete('${tool.id}')"
                                     class="mr-2 h-3 w-3 text-pink-600 focus:ring-pink-500 border-gray-300 dark:border-slate-600 rounded dark:bg-slate-700 dark:focus:ring-offset-slate-800">
@@ -1184,11 +1545,10 @@
         function renderResearchAccordion(currentPhaseId) {
             const container = document.getElementById('research-accordion');
             if (!container) return;
-            container.innerHTML = ''; // Clear previous content
+            container.innerHTML = '';
             researchPhases.forEach(phase => {
                 const isActive = phase.id === currentPhaseId;
-                const phaseTools = phase.tools.map(toolId => researchTools.find(t => t.id === toolId)).filter(Boolean); // Filter out undefined
-
+                const phaseTools = phase.tools.map(toolId => researchTools.find(t => t.id === toolId)).filter(Boolean);
                 const accordionElement = document.createElement('div');
                 accordionElement.className = 'bg-white dark:bg-slate-800 rounded-lg shadow-sm border border-gray-200 dark:border-slate-700';
                 accordionElement.innerHTML = `
@@ -1209,17 +1569,17 @@
                     <div class="accordion-content ${isActive ? 'active' : ''}" id="accordion-${phase.id}">
                         <div class="p-6 pt-0">
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                ${phaseTools.map(tool => tool ? renderToolCard(tool) : '').join('')} <!-- Check if tool exists -->
+                                ${phaseTools.map(tool => tool ? renderToolCard(tool) : '').join('')}
                             </div>
                         </div>
                     </div>`;
                 container.appendChild(accordionElement);
             });
-            callLucideCreateIcons(); // Re-render icons after updating accordion
+            callLucideCreateIcons();
         }
         
         /** @param {NonNullable<typeof researchTools[0]>} tool */
-        function renderToolCard(tool) { // For research accordion
+        function renderToolCard(tool) {
             const isCompleted = completedTools.has(tool.id);
             return `
                 <div class="tool-card bg-gray-50 dark:bg-slate-800/60 rounded-lg p-4 border border-gray-200 dark:border-slate-700 ${isCompleted ? 'bg-green-50 dark:bg-green-900/30 border-green-200 dark:border-green-700' : ''}">
@@ -1253,9 +1613,7 @@
             const categoryFilter = categoryFilterSelect ? categoryFilterSelect.value : '';
 
             let filteredToolsArr = researchTools.filter(tool => {
-                const matchesSearch = tool.name.toLowerCase().includes(searchTerm) || 
-                                      tool.purpose.toLowerCase().includes(searchTerm) || 
-                                      tool.category.toLowerCase().includes(searchTerm);
+                const matchesSearch = tool.name.toLowerCase().includes(searchTerm) || tool.purpose.toLowerCase().includes(searchTerm) || tool.category.toLowerCase().includes(searchTerm);
                 const matchesCategory = !categoryFilter || tool.category === categoryFilter;
                 return matchesSearch && matchesCategory;
             });
@@ -1271,7 +1629,7 @@
         }
 
         /** @param {NonNullable<typeof researchTools[0]>} tool */
-        function renderDetailedToolCard(tool) { // For tools directory - grid view
+        function renderDetailedToolCard(tool) {
             const isCompleted = completedTools.has(tool.id);
             return `
                 <div class="tool-card bg-white dark:bg-slate-800 rounded-lg p-6 border border-gray-200 dark:border-slate-700 shadow-sm ${isCompleted ? 'bg-green-50 dark:bg-green-900/30 border-green-200 dark:border-green-700' : ''}">
@@ -1297,7 +1655,7 @@
         }
 
         /** @param {NonNullable<typeof researchTools[0]>} tool */
-        function renderListToolCard(tool) { // For tools directory - list view
+        function renderListToolCard(tool) {
             const isCompleted = completedTools.has(tool.id);
             return `
                 <div class="tool-card bg-white dark:bg-slate-800 rounded-lg p-4 border border-gray-200 dark:border-slate-700 shadow-sm flex items-center justify-between ${isCompleted ? 'bg-green-50 dark:bg-green-900/30 border-green-200 dark:border-green-700' : ''}">
@@ -1369,13 +1727,12 @@
         }
 
         function updateUIAfterProgress() {
-            // Re-render the current view (research section or tools directory)
             if (activeSection !== 'overview' && activeSection !== 'tools-directory') {
-                renderResearchSection(activeSection); 
+                renderResearchSection(activeSection);
             } else if (activeSection === 'tools-directory') {
                 renderToolsDirectory();
             }
-             updateOverallProgress(); // Always update overall progress bar
+             updateOverallProgress(); 
         }
         
         if (typeof globalWindow.confetti === 'undefined') {
@@ -1394,10 +1751,10 @@
             if (progressBar) {
                 progressBar.style.width = `${progressPercent}%`;
                 if (progressPercent === 100 && !progressBar.classList.contains('celebrated')) {
-                    progressBar.classList.add('celebrated'); // Mark as celebrated to avoid multiple confetti
+                    progressBar.classList.add('celebrated');
                     triggerConfetti();
                 } else if (progressPercent < 100) {
-                    progressBar.classList.remove('celebrated'); // Reset if progress drops
+                    progressBar.classList.remove('celebrated');
                 }
             }
             if (progressText) progressText.textContent = `${progressPercent}%`;
@@ -1409,8 +1766,7 @@
                 setTimeout(() => { if (globalWindow.confetti) globalWindow.confetti({ particleCount: 200, angle: 60, spread: 155, origin: { x: 0 } }) }, 250);
                 setTimeout(() => { if (globalWindow.confetti) globalWindow.confetti({ particleCount: 200, angle: 120, spread: 155, origin: { x: 1 } }) }, 400);
             } else {
-                // Fallback or retry if confetti not loaded yet
-                setTimeout(triggerConfetti, 100); 
+                setTimeout(triggerConfetti, 100);
             }
         }
 
@@ -1418,14 +1774,13 @@
         function toggleAccordion(phaseId) {
             const content = document.getElementById(`accordion-${phaseId}`);
             if (!content) return;
-            const header = /** @type {HTMLElement | null} */ (content.previousElementSibling); // Get the header element
-            const icon = header ? header.querySelector('.accordion-icon') : null; // Get icon within the header
+            const header = /** @type {HTMLElement | null} */ (content.previousElementSibling);
+            const icon = header ? header.querySelector('.accordion-icon') : null;
             
             if (content.classList.contains('active')) {
                 content.classList.remove('active');
-                 if (icon && icon instanceof HTMLElement) icon.style.transform = 'rotate(0deg)'; // Reset icon
+                 if (icon && icon instanceof HTMLElement) icon.style.transform = 'rotate(0deg)';
             } else {
-                // Optional: Close other accordions
                 document.querySelectorAll('.accordion-content.active').forEach(acc => {
                     acc.classList.remove('active');
                     const otherHeader = /** @type {HTMLElement | null} */ (acc.previousElementSibling);
@@ -1433,22 +1788,22 @@
                     if (otherIcon && otherIcon instanceof HTMLElement) otherIcon.style.transform = 'rotate(0deg)';
                 });
                 content.classList.add('active');
-                if (icon && icon instanceof HTMLElement) icon.style.transform = 'rotate(180deg)'; // Rotate open icon
+                if (icon && icon instanceof HTMLElement) icon.style.transform = 'rotate(180deg)';
             }
         }
 
         function toggleMobileMenu() {
             const overlay = document.getElementById('mobile-overlay');
-            const iconEl = document.getElementById('mobile-menu-icon'); // The <i> tag for the icon
+            const iconEl = document.getElementById('mobile-menu-icon');
             if (overlay && iconEl) {
                 if (overlay.classList.contains('hidden')) {
                     overlay.classList.remove('hidden');
-                    iconEl.setAttribute('data-lucide', 'x'); // Change to 'x' icon
+                    iconEl.setAttribute('data-lucide', 'x');
                 } else {
                     overlay.classList.add('hidden');
-                    iconEl.setAttribute('data-lucide', 'menu'); // Change back to 'menu' icon
+                    iconEl.setAttribute('data-lucide', 'menu');
                 }
-                callLucideCreateIcons(); // Re-render Lucide icons
+                callLucideCreateIcons();
             }
         }
 
@@ -1462,10 +1817,10 @@
             if (gridBtn && listBtn) {
                 if (mode === 'grid') {
                     gridBtn.classList.add('bg-white', 'dark:bg-slate-600', 'shadow-sm', 'text-pink-700', 'dark:text-pink-400');
-                    gridBtn.classList.remove('text-gray-700', 'dark:text-slate-300'); // Ensure default text colors are removed
+                    gridBtn.classList.remove('text-gray-700', 'dark:text-slate-300');
                     listBtn.classList.remove('bg-white', 'dark:bg-slate-600', 'shadow-sm', 'text-pink-700', 'dark:text-pink-400');
-                    listBtn.classList.add('text-gray-700', 'dark:text-slate-300'); // Add default text colors
-                } else { // 'list'
+                    listBtn.classList.add('text-gray-700', 'dark:text-slate-300');
+                } else {
                     listBtn.classList.add('bg-white', 'dark:bg-slate-600', 'shadow-sm', 'text-pink-700', 'dark:text-pink-400');
                     listBtn.classList.remove('text-gray-700', 'dark:text-slate-300');
                     gridBtn.classList.remove('bg-white', 'dark:bg-slate-600', 'shadow-sm', 'text-pink-700', 'dark:text-pink-400');
@@ -1479,7 +1834,7 @@
             const modal = document.getElementById('notion-modal');
             const contentEl = document.getElementById('notion-template-content');
             if (modal && contentEl) {
-                contentEl.textContent = notionTemplateContent; // Already translated string
+                contentEl.textContent = notionTemplateContent;
                 modal.classList.remove('hidden');
             }
         }
@@ -1491,26 +1846,25 @@
 
         function copyTemplateToClipboard() {
             navigator.clipboard.writeText(notionTemplateContent)
-                .then(() => alert('✅ ¡Plantilla copiada al portapapeles! Ahora pégala en tu página de Notion.'))
-                .catch(() => alert('❌ Falló la copia. Por favor, selecciona y copia el texto manualmente.'));
+                .then(() => alert('✅ ¡Plantilla copiada al portapapeles! Ahora péguela en su página de Notion.'))
+                .catch(() => alert('❌ Falló la copia. Por favor, seleccione y copie el texto manualmente.'));
         }
 
         function downloadTemplateAsFile() {
             const blob = new Blob([notionTemplateContent], { type: 'text/markdown;charset=utf-8' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
-            a.href = url; a.download = 'plantilla-investigacion-ecommerce-notion.md'; // Translated filename
+            a.href = url; a.download = 'plantilla-investigacion-ecommerce-notion.md';
             document.body.appendChild(a); a.click();
             document.body.removeChild(a); URL.revokeObjectURL(url);
         }
 
         document.addEventListener('DOMContentLoaded', init);
 
-        // Back to top button
         globalWindow.onscroll = function() { scrollFunction(); };
         function scrollFunction() {
             var backToTopButton = document.getElementById("back-to-top");
-            if (backToTopButton) { // Check if element exists
+            if (backToTopButton) {
                 if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
                     backToTopButton.style.display = "block";
                 } else {
@@ -1519,8 +1873,7 @@
             }
         }
         function scrollToTop() {
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            document.body.scrollTop = 0; document.documentElement.scrollTop = 0;
         }
     </script>
 </body>
